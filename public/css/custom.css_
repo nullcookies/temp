@@ -1,0 +1,202 @@
+.new-modal{
+	padding-top:30px !important;
+}
+.wrapper2{
+	width:100%;
+	height:auto;
+}
+.btn-check-guest{
+	background-color: #167bcb;
+    color: #fff;
+    border: 1px #167bcb solid;
+}
+.btn-login{
+	padding:6px 60px !important;
+	margin-top:10px !important;
+}
+#login {
+  display: none;
+}
+#register,#login{
+	border-left:1px solid #ccc;
+}
+@media only screen and (max-width:990px){
+	#register,#login{
+		border-left:none;
+		border-top:1px solid #ccc;
+		margin-top:10px;
+	}
+	.pd-top-20{
+	padding-top:0px !important;
+	}
+}
+.pd-top-20{
+	padding-top:20px;
+}
+.register-label{
+	font-size: 13px;
+    color: #333;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+.register-input{
+	background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    outline: none;
+    margin-bottom: 10px;
+}
+.pd-10{
+	padding:10px;
+}
+.form-gender{
+	padding-left:0px;
+}
+.form-mobile{
+	padding-right:0px;
+}
+.billing-save{
+	position:absolute;
+}
+.mobile-form-input{
+	width:50% !important;
+	background-color: #fff;
+    border: 1px #e5e5e5 solid;
+    padding: 8px 10px;
+    outline: none;
+    color: #aaa;
+}
+.mt-10{
+	margin-top:10px;
+}
+.width-50{
+	width:50%;
+}
+.promo-input{
+	background-color: #fff;
+    border: 1px #e5e5e5 solid;
+    padding: 8px 10px;
+    outline: none;
+    color: #aaa;
+}
+.apply-button{
+	padding:9px 12px !important;
+	background: #167bcb;
+    color: #333;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: normal;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    border: 1px #d1d1d1 solid;
+}
+.payment-failed h5{
+	margin-bottom:30px;
+}
+.btn-home{
+	background-color: #167bcb;
+    border: medium none;
+    border-radius: 2px 2px 2px 2px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 14px 35px;
+    text-decoration: none;
+    height: auto;
+    font-weight: 600;
+    letter-spacing: 0.5px;	
+}
+.btn-home:hover{
+	color: #167bcb;
+    text-decoration: none;
+	background-color: transparent;
+	border: 2px solid #167bcb;
+}
+.textarea-resize{
+	resize:none;
+}
+.ml-20{
+	margin-left:20px;
+}
+.pdl-0{
+	padding-left:0px;
+}
+.group-select li .input-box select{
+		width:96%;
+	}
+@media only screen and (max-width:768px){
+	.one-page-checkout .step {
+		padding: 10px;
+		background-color: #FFFFFF;
+	}
+	.group-select li .input-box .input-text {
+    float: left;
+    width: 100%;
+	}
+	.group-select li .input-box {
+    float: left;
+    width: 100%;
+	}
+	.group-select li .input-box select{
+		width:100%;
+	}
+	.textarea-resize{
+		width:100% !important;
+	}
+}
+.checkout-table,.order-review-table{
+	border:1px solid #ccc;
+}
+.text-right{
+	text-align:right;
+}
+.total-pay{
+	font-size:18px;
+	font-weight:bold;
+	text-align:right;
+}
+@media only screen and (max-width:512px){
+	.promo-input{
+		margin-left:-40%;
+	}
+}
+.align-mid{
+	vertical-align:middle !important;
+}
+.bold{
+	font-weight:bold;
+}
+.mobile-list{
+	display:none;
+}
+@media only screen and (max-width:767px){
+	.mobile-list{
+		display:block;
+	}
+	.order-review-table{
+		display:none;
+	}
+}
+.product-details{
+	text-align:center;
+	margin-top:5px;
+}
+.product-images{
+	max-width:100px;
+	max-height:100px;
+	margin-top:5px;
+}
+.mobile-list{
+	border:1px solid #ccc;
+	margin-bottom:10px;
+}
+.group-select li input.input-text{
+	width:96%;
+}
+.charges{
+	text-align: center;
+}

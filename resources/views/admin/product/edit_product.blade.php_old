@@ -1,0 +1,406 @@
+@extends('admin/layouts/layout')
+
+@section('title')
+	| {{'Coupons'}}
+@endsection
+
+@section('pageTopScripts')
+	<link rel="stylesheet" href="{{asset(ADMIN_FILE_PATH.'/css/core.css')}}">
+	<link rel="stylesheet" href="{{asset(ADMIN_FILE_PATH.'/css/custom.css')}}">
+	<link rel="stylesheet" href="{{asset(ADMIN_FILE_PATH.'/vendor/summernote/summernote.css')}}">
+	<link rel="stylesheet" href="{{asset('css/sweetalert.css')}}"/>
+	<link rel="stylesheet" href="{{asset(ADMIN_FILE_PATH.'/vendor/select2/dist/css/select2.min.css')}}">
+	<style>
+		#suggested_categories li{
+			cursor: pointer;
+		}
+	</style>
+@endsection
+
+@section('pageScripts')
+<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/js/app.js')}}"></script>
+<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/js/demo.js')}}"></script>
+<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/vendor/summernote/summernote.min.js')}}"></script>
+		
+<script src="{{asset('js/sweetalert.min.js')}}"></script>		
+<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/vendor/select2/dist/js/select2.min.js')}}"></script>
+@if(Session::has('saved_successfully'))
+    <script>
+		  $(document).ready(function(){
+		    swal("Product Successfully uploaded!", "", "success");
+		  });
+		</script>
+@endif
+
+
+@if(Session::has('saved_successfully'))
+	    <script>
+	        $(document).ready(function(){
+	           $('#standard').removeClass('active in');
+			   $('#standard').attr('aria-expanded',false);
+			   
+			   $('#advance').addClass('active in');
+			   $('#advance').attr('aria-expanded',true);
+			   
+			   $('#standard_tab').removeClass('active');
+				$('#advanced_tab').addClass('active');
+	        });
+	    </script>
+	    <script>
+  $(document).ready(function(){
+    swal("Saved Successfully!", "", "success");
+  });
+</script>
+	@endif
+	<script>
+		function showCategory(cat){
+			console.log(cat);
+			$.ajax({
+				url: "{{url(ADMIN_URL_PATH.'/product/fetchCategory')}}",
+				type: 'POST',
+				data: {category:cat},
+				dataType: 'html',
+				beforeSend: function(){
+
+				},
+				success: function(result){
+					$('#suggested_categories').html(result);
+				}
+			});
+		}
+	
+		function addCategoryToProduct(catid){
+			$.ajax({
+				url: "{{url(ADMIN_URL_PATH.'/product/setupCategory')}}",
+				type: 'POST',
+				data: {catid:catid},
+				dataType: 'html',
+				beforeSend: function(){
+				},
+				success: function(result){
+					$('#suggested_categories').html('');
+					$('#searchText').val('');
+					$('#final_categories').append(result);
+				}
+			});
+		}
+	
+		function removeInput(id){
+			$('#selected_catagoey_li_'+id).remove();
+		}
+	
+		$(document).ready(function(){
+			$("#summernote").summernote({
+				disableResizeEditor: true,
+				minHeight : 200,
+			});
+
+			$('#summernote_textarea').attr('name','product_desc');
+
+			$('#save_product_form').submit(function(){
+				$('textarea[name="product_desc"]').val($('#summernote_content').html());
+			});
+			
+			$("select").select2({
+				placeholder: "Select Product Category",
+  				allowClear: true
+			});
+		});
+
+	@if($errors->has('product_desc'))
+		
+			$(document).ready(function(){
+				$('#my_summernote_frame').css('border-color','#ea6b6b');
+			});
+		
+	@endif	
+	
+		function gotoproductspage() {
+		    window.location.href="{{url('admin/product')}}";
+		}
+	</script>
+@endsection
+
+@section('bodyclass')
+fixed-sidebar fixed-header skin-default content-appear
+@endsection
+
+@section('content')
+<div class="container-fluid">
+	<ol class="breadcrumb no-bg mb-1">
+		<li class="breadcrumb-item"><a href="#">Home</a></li>
+		<li class="breadcrumb-item active">Products</li>
+	</ol>
+	<div class="box box-block bg-white">
+		<div class="row header-row">
+			<h3 style="position:absolute;">Products</h3>
+			<ul class="demo-header-actions">
+				<!-- <li class="demo-tabs"><button type="button" class="btn btn-success w-min-sm mb-0-25 waves-effect waves-light">Copy Product</button></li>
+				<li class="demo-tabs"><button type="button" class="btn btn-danger w-min-sm mb-0-25 waves-effect waves-light">Save Product</button></li> -->
+				<li class="demo-tabs demo_tabs"><button type="button" class="btn btn-black w-min-sm mb-0-25 waves-effect waves-light" onclick="gotoproductspage();">Cancel Product</button></li> 
+			</ul>
+		</div>
+		<div class="row row-tabs">
+			<div class="col-md-12 mb-1 mb-md-0">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link  active" id="standard_tab" data-toggle="tab" href="#standard">Standard</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" id="advanced_tab" href="#advance">Advance</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		{!! Form::open(array('method' => 'post', 'id' => 'save_product_form', 'files' =>'true', 'action' => ['Admin\Product\ProductController@saveEditProduct'])) !!}
+			<input type="hidden" name="product_id" value="{{$result->id}}">
+		<div class="tab-content">
+			
+			<div id="standard" class="tab-pane fade in active">
+				<div class="row row-standard">
+					<div class="col-md-12">
+						<div class="col-md-8">
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red">*</span>&nbsp;Product Name:</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control @if($errors->has('product_name')) danger_class_text @endif " value="{{Old('product_name') ? Old('product_name') : $result->product_name }}" name="product_name" id="coupon-name" placeholder="">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red">*</span>&nbsp;Description:<br/><a href="#" style="font-size:10px">Add Tab</a></label>
+									<div class="col-sm-8 summernote-row">
+										<div id="summernote" >
+											{!! Old('product_desc') ? Old('product_desc') : $result->product_description !!}
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label">Brand:</label>
+									<div class="col-sm-8">
+										<input type="text" value="{!! Old('brand') ? Old('brand') : $result->brand !!}" class="form-control" name="brand">
+									</div>
+									
+								</div>
+								<div class="form-group row">
+									<label for="uses-per-customer" class="col-sm-4 control-label"><span style="color:red">*</span>Categories:
+										</label>
+									<div class="col-sm-8">
+										<div class="row">
+											<select name="category[]" multiple>
+												@foreach($categories as $category)
+													<option value="{{$category->id}}" @if(in_array($category->id, $product_category_ids)) selected @endif>{{$category->category}}</option>
+												@endforeach
+											</select>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="form-group">
+									<label for="coupon-name" class="col-sm-4 control-label">Product Images:</label>
+									<div class="col-sm-4">
+										<input type="file" name="product_image" id="input-file-now"/>
+										@if($errors->has('product_image')) <span class="text-danger">Upload an image file</span> @endif
+									</div>
+									<div class="col-sm-4" style="visibility:hidden">
+										<input type="file" id="input-file-now" class="dropify" />
+									</div>
+								</div> -->
+						</div>
+						<div class="col-md-4 side-form row">
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label">Subtract Stock:</label>
+									<div class="col-sm-8">
+										<div class="float-xs-left mr-1"><input type="checkbox" class="js-switch" value="yes" @if($errors->has('substract_stock') && Old('substract_stock') == 'yes') checked @elseif($result->substract_stock == 'yes') checked @endif name="substract_stock" data-size="small" data-color="#43b968" ></div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red">*</span>SKU:</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control @if($errors->has('product_sku')) danger_class_text @endif " id="coupon-name" name="product_sku" value="{{Old('product_sku') ? Old('product_sku') : $result->sku}}" placeholder="">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label">Model:</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control " id="coupon-name" value="{{Old('product_model') ? Old('product_model') : $result->model}}" name="product_model" placeholder="">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red">*</span>Mrp Price:</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control @if($errors->has('mrp')) danger_class_text @endif" id="coupon-name" value="{{Old('mrp') ? Old('mrp') : $result->product_mrp}}" name="mrp" placeholder="">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red">*</span>Selling Price:</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control @if($errors->has('selling_price')) danger_class_text @endif" id="coupon-name" name="selling_price" value="{{Old('selling_price') ? Old('selling_price') : $result->product_selling_price}}" placeholder="">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red">*</span>Quantity:</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control @if($errors->has('product_quantity')) danger_class_text @endif" id="coupon-name" value="{{Old('product_quantity') ? Old('product_quantity') : $result->quantity}}" name="product_quantity" >
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red; ">*</span>Weight:<br/>(in gms)</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control @if($errors->has('weight')) danger_class_text @endif" id="coupon-name" value="{{Old('weight') ? Old('weight') : $result->weight }}" name="weight" placeholder="">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="coupon-name" class="col-sm-4 control-label"><span style="color:red">*</span>Dimensions:<br/>(L x B x H) inch</label>
+									<div class="col-sm-8">
+										<div class="col-sm-4 dimension-box">
+										<input type="text" class="form-control" id="coupon-name" name="dimension_lenght" value="{{Old('dimension_lenght') ? Old('dimension_lenght') : $l }}" placeholder="">
+										</div>
+										<div class="col-sm-4 dimension-box">
+										<input type="text" class="form-control" id="coupon-name" name="dimension_width" value="{{Old('dimension_width') ? Old('dimension_width') : $b }}" placeholder="">
+										</div>
+										<div class="col-sm-4 dimension-box">
+										<input type="text" class="form-control" id="coupon-name" name="dimension_height" value="{{Old('dimension_height') ? Old('dimension_height') : $h }}" placeholder="">
+										</div>
+									</div>
+									@if($errors->has('dimension_lenght') || $errors->has('dimension_width') || $errors->has('dimension_height')) <span class="text-danger">Please give correct dimension.</span> @endif
+								</div>
+								<div class="form-group row">
+									<label class="control-label"></label>
+									<div class="col-sm-8">
+										<button type="submit" class="btn btn-success">Save</button>
+									</div>
+								</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+								
+						<div id="advance" class="tab-pane fade">
+						  <div class="row advance_row">
+						<div class="col-md-2">
+							<ul class="nav nav-tabs v-tabs">
+								<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#seo">SEO</a></li>
+								<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#custom-fields">Custom Fields</a></li> -->
+								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#standard-fields">Standardized Fields</a></li>
+								<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#related-products">Related Products</a></li> -->
+								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-settings">Additional Settings</a></li>
+								<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reward">Reward</a></li>
+								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bulk-discounts">Bulk Discounts</a></li>
+								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#special">Special</a></li> -->
+							</ul>
+						</div>
+						<div class="col-md-10">
+						  <div class="tab-content">
+							<div id="seo" class="tab-pane fade in active">
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Meta Title :</label>
+									<div class="col-xs-8">
+										<input class="form-control" type="text" name="meta_title" value="{!! Old('meta_title') ? Old('meta_title') : $result->meta_title !!}" id="example-text-input">
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Meta Tag Description :</label>
+									<div class="col-xs-8">
+										<textarea class="form-control" name="meta_decription" value="{!! Old('meta_decription') ? Old('meta_decription') : $result->meta_description !!}" id="exampleTextarea" rows="3"></textarea>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Meta Tag Keywords :</label>
+									<div class="col-xs-8">
+										<textarea class="form-control" name="meta_keywords" value="{!! Old('meta_keywords') ? Old('meta_keywords') : $result->meta_keywords !!}"  id="exampleTextarea" rows="3"></textarea>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Product Tags:<br/><p style="font-size:10px">comma seprated</p></label>
+									<div class="col-xs-8">
+										<input class="form-control" name="product_tags" value="{!! Old('product_tags') ? Old('product_tags') : $result->product_tags !!}"  type="text" value="" id="example-text-input">
+									</div>
+								</div>
+							</div>
+							
+							<div id="standard-fields" class="tab-pane fade">
+								<!-- <div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">UPC :</label>
+									<div class="col-xs-4">
+										<input class="form-control" type="text" value="" name="product_upc" id="example-text-input">
+									</div>
+								</div> -->
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">ISBN :</label>
+									<div class="col-xs-4">
+										<input class="form-control" type="text" value="{!! Old('product_isbn') ? Old('product_isbn') : $result->isbn !!}" name="product_isbn" id="example-text-input">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">ASIN:</label>
+									<div class="col-xs-4">
+										<input class="form-control" type="text" value="{!! Old('product_asin') ? Old('product_asin') : $result->asin !!}" name="product_asin" id="example-text-input">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">EAN:</label>
+									<div class="col-xs-4">
+										<input class="form-control" type="text" name="product_ean" value="{!! Old('product_ean') ? Old('product_ean') : $result->ean !!}" id="example-text-input">
+									</div>
+								</div>
+							</div>
+							<!-- <div id="related-products" class="tab-pane fade">
+								<table class="table table-striped mb-0">
+								<thead>
+									<tr>
+										<th>Related Products :<br/><p style="font-size:10px">(Autocomplete)</p></th>
+										<th class="col-sm-8"><input class="form-control" type="text" value="" id="example-text-input"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td class="col-sm-8"><textarea class="form-control" id="exampleTextarea" rows="3"></textarea></td>
+									</tr>
+								</tbody>
+								</table>
+							</div> -->
+							<div id="add-settings" class="tab-pane fade">
+							   
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Requires Shipping :</label>
+									<div class="col-xs-8">
+										<div class="float-xs-left mr-1"><input type="checkbox" name="requires_shipping" class="js-switch" data-size="small" data-color="#43b968" @if($errors->has('requires_shipping') && Old('requires_shipping') == 'yes') checked @elseif($result->requires_shipping == 'yes') checked @endif></div>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Maximum Quantity :<br/><p style="font-size:10px">Force a maximum ordered amount</p></label>
+									<div class="col-xs-4">
+										<input class="form-control" type="text" value="{!! Old('maximum_order_quantity') ? Old('maximum_order_quantity') : $result->maximum_order_quantity !!}" name="maximum_order_quantity" id="example-text-input">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Minimum Quantity :<br/><p style="font-size:10px">Force a minimum ordered amount</p></label>
+									<div class="col-xs-4">
+										<input class="form-control" type="text" name="minimum_order_quantity"  value="{!! Old('minimum_order_quantity') ? Old('minimum_order_quantity') : $result->minimum_order_quantity !!}" id="example-text-input">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="example-text-input" class="col-xs-2 col-form-label">Out of stock status:<br/><p style="font-size:10px">Status shown when a product is out of stock</p></label>
+									<div class="col-xs-2">
+										<select class="form-control" name="out_of_stock_status" id="status">
+											<option value="out_of_stock" selected>Out of stock</option>
+											<option>In Stock</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-success">Save</button>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		  {!! Form::close() !!}
+		</div>
+	</div>
+					
+@endsection

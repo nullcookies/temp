@@ -1,0 +1,225 @@
+<?php 
+namespace App\Http\Controllers\Admin\WebsiteSetting;
+use Illuminate\Http\Request;
+use App\Models\Banners\Banners;
+use App\Http\Requests;
+use App\Http\Requests\Admin\Banners\BannerRequest;
+use App\Http\Controllers\Controller, DB, Session, Redirect, Response;
+use App\Models\Socialmedia, File;
+
+class WebsiteSettingController extends Controller
+{
+	private $data;
+	function __construct(Banners $bannerObj) {
+		$this->bannerObj = $bannerObj;
+	}
+	public function index()
+	{
+		$obj = new Banners;
+		$data['title']				= 'Website Setting';
+		$data['category']			= $all_categories = $obj->category;
+		$data['logo'] 				= Banners::where('cid', 1)->first();
+		$data['mainslider'] 		= Banners::where('cid', 2)->get();
+		$data['right1'] 			= Banners::where('cid', 3)->first();
+		$data['right2'] 			= Banners::where('cid', 4)->first();
+		$data['right3'] 			= Banners::where('cid', 5)->first();
+		$data['contentstrip'] 		= Banners::where('cid', 6)->first();
+        $data['logo']['dim']        = $this->getdimention(1);
+        $data['mainslider_dim']    = $this->getdimention(2);
+        $data['right1']['dim']      = $this->getdimention(3);
+        $data['right2']['dim']      = $this->getdimention(4);
+        $data['right3']['dim']      = $this->getdimention(5);
+		$data['contentstrip']['dim']= $this->getdimention(6);
+        //dd($data['mainslider']);
+		return view ('admin/website/setting', $data);
+	}	
+	public function add()
+	{
+		$obj = new Banners;
+		$data['title']				= 'Add Banner Images'; unset($obj->category[1]);
+		$data['category']			= $obj->category;        
+		return view ('admin/website/add', $data);
+	}
+	public function updateImage(BannerRequest $request)
+	{
+		//dd($request->all());
+		if(!$request->all()){
+            die("Bad Request");
+        }        
+        $all_categories = $this->bannerObj->category;
+
+        $imageName = '';
+        $imageurl 	   = $request->link;        
+        $cid 	= $request->category;
+        /* << Validation for Dimension fo diffent category*/
+        /*$dimension    = '';
+        foreach($all_categories as $mycategory){
+        	if($mycategory['id'] == $cid){
+        		$dimension  = $mycategory['dim'];
+        		break;
+        	}
+        }
+		$dimension = explode('x', $dimension);
+		$this->validate($request, [
+        "image"  => "max:100|dimensions:width=".$dimension[0].",height=".$dimension[1]."",            
+        ],
+        ['dimensions' => 'The :attribute should be '.$dimension[0].'x'.$dimension[1].' dimension']
+        );*/
+        /* Validation for Dimension fo diffent category >>*/
+        //$this->validate($request, ["image" => "max:100"]);
+
+
+        $image  = $request->file('image'); 
+       $result = $this->bannerObj->createOrUpdateImage($cid,$imageurl,$image);
+       
+        if($result){
+        	return redirect('admin/jcrop?w='.$result['w'].'&h='.$result['h'].'&imgpath='.$result['imgpath'].'&img='.$result['img']);
+        }else{
+        	return redirect('admin/website-setting/add')->withErrors($errors, 'danger','Something were wrong.');
+        }        
+	}
+	public function sliders()
+	{
+		$obj = new Banners;
+		$data['title']				= 'Add Banner Slider Images';
+		$data['category']			= $obj->category;		
+		return view ('admin/website/sliders', $data);
+	}
+	public function updateSliders(BannerRequest $request)
+	{
+		//dd($request->all());
+		if(!$request->all()){
+            die("Bad Request");
+        }
+        $imageName = '';
+        $imageurl 	   = $request->link;        
+        $cid 	= $request->category;
+        /* << Validation for Dimension fo diffent category*/
+       /* $dimension    = '';
+        $all_categories = $this->bannerObj->category;
+        foreach($all_categories as $mycategory){
+        	if($mycategory['id'] == $cid){
+        		$dimension  = $mycategory['dim'];
+        		break;
+        	}
+        }
+		$dimension = explode('x', $dimension);
+		$this->validate($request, [
+        "image"  => "max:220|dimensions:width=".$dimension[0].",height=".$dimension[1]."",           
+        ],
+        ['dimensions' => 'The :attribute should be '.$dimension[0].'x'.$dimension[1].' dimension']
+        );*/
+        /* Validation for Dimension fo diffent category >>*/
+        $image  = $request->file('image');  
+        $slider = $this->bannerObj->addSlider($cid,$imageurl,$image);
+        if(!$slider){
+            Session::flash('danger','Something were wrong.');
+            return Redirect::back();
+        }
+        Session::flash('success','Image Uploaded successfully.');
+        Session::flash('id',$slider);
+        //return redirect(ADMIN_URL_PATH.'/website-setting');              
+        return redirect('admin/jcrop?w='.$slider['w'].'&h='.$slider['h'].'&imgpath='.$slider['imgpath'].'&img='.$slider['img']);
+	}
+
+    /* Social Media Controller*/
+
+    public function addsocial()
+    {
+        return view('admin.socialmedia.create');
+    }
+    public function postsocial(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|min:3',
+            'slug' => 'required|alpha_dash|unique:socialmedia',
+            'link' => 'required|url'
+        ]);
+        Socialmedia::create($request->all());
+        return redirect('admin/socialmedia')
+                        ->with('success','Record created successfully');
+    }
+    public function editsocial($id)
+    {
+        $item = Socialmedia::find($id);
+        return view('admin.socialmedia.edit',compact('item'));
+    }
+    public function updateocial(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|min:3',
+            'slug' => 'required|alpha_dash|unique:socialmedia,slug,'.$id,
+            'link' => 'required|url'
+        ]);
+        Socialmedia::find($id)->update($request->all());
+        return redirect('admin/socialmedia')
+                        ->with('success','Record updated successfully');
+    }
+    public function showlist(Request $request)
+    {
+        $items = Socialmedia::orderBy('id','DESC')->paginate(10);
+        return view('admin.socialmedia.index',compact('items'))
+            ->with('i', ($request->input('page', 1) - 1) * 10);
+    }
+    public function deletesocial(Request $request)
+    {        
+        Socialmedia::find($request->id)->delete();
+        return redirect('admin/socialmedia')
+                        ->with('success','Record deleted successfully');
+    }
+
+	public function imagedelete(Request $request)
+    {
+        $bannerImage = Banners::find($request->id);        
+        $bannerImage->delete();
+        if(!empty($bannerImage->image) && is_file(public_path('product_images/banners/').$bannerImage->image)){
+            unlink(public_path('product_images/banners/').$bannerImage->image);
+        }
+        return response()->json(['danger'=>'Images Deleted !!.', 'id'=>$request->id]);
+    }	
+    public function postjcrop(Request $request){
+        $data           = [];
+        $data['x']      = $request->x;
+        $data['y']      = $request->y;
+        $data['w']      = $request->w;
+        $data['h']      = $request->h;
+        $data['folder']      = $request->imgpath;
+        $data['img']    = $request->img;
+        $data['backlink']    = $request->backlink;
+        //dd($data);
+        return view('admin/jcrop/imageform',$data);
+    }
+    function base64ToImage($base64_string,$imgname,$output_file) {
+        $img = $base64_string;
+        $img = str_replace('data:image/png;base64,', '', $img);
+        $img = str_replace(' ', '+', $img);
+        $data = base64_decode($img);
+        $file = public_path($output_file).'/'.$imgname;
+        $success = file_put_contents($file, $data);
+        return $success ? true : false;
+    }
+    public function savejcrop(Request $request){
+        if($request->has('imgdata') && $request->has('imagename') && $request->has('path')){
+            $image  = $this->base64ToImage($request->imgdata,$request->imagename,$request->path);
+            if($image){
+                return Response::json(array('path' => url('admin/homepage')));
+            }
+        }
+        exit;
+    }
+    public function getdimention($cid)
+    {
+        $all_categories = $this->bannerObj->category;        
+        $dimension    = '';
+        foreach($all_categories as $mycategory){
+            if($mycategory['id'] == $cid){
+                $dimension  = $mycategory['dim'];
+                break;
+            }
+        }
+        $dimension = explode('x', $dimension);
+        return ['width' => $dimension[0], 'height' => $dimension[1]];
+    }
+
+}
+ ?>

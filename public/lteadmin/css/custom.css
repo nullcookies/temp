@@ -1,0 +1,2007 @@
+.table-container{
+	width: 100%;
+	overflow-y: auto;
+	_overflow: auto;
+	margin: 0 0 1em;
+}
+.table-mobile
+{
+	overflow-x:auto;
+}
+@-moz-document url-prefix(){
+	.table-mobile{
+	overflow-x:auto;
+}
+
+}
+/*------Products CSS starts-----*/
+.advance_row{
+	margin-top:30px;
+}
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.head-position{
+	position: absolute;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.row .table td{
+	font-weight:bold;
+}
+.varient-multi{
+	padding-left:0px;
+}
+.varient-multi .form-control{
+	padding:0px;
+}
+.varient-multi option{
+	padding:10px;
+	border-bottom:1px solid #ccc;
+	font-size:16px;
+	font-weight:bold;
+	background-color:#E8EBF0;
+}
+.form-group label{
+	font-weight:bold;
+}
+.header-row{
+	border-bottom:2px solid #000;
+	padding-bottom:10px;
+}
+.demo-header-actions{
+	float:right;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-right:10px;
+}
+.demo-tabs{
+	float: left;
+	display: block;
+	position: relative;
+	margin-right:10px;
+}
+.demo_tabs{
+	float: left;
+	display: block;
+	position: relative;
+}
+.row-tabs{
+	margin-top:30px;
+}
+.row-standard{
+	margin-top:30px;
+}
+.description-form{
+	padding-bottom:60px;
+}
+.summernote-row{
+	margin-bottom:20px;
+}
+.side-form{
+	border-left:1px solid #ccc;
+}
+.mr-1{
+	margin-top:15px;
+}
+.save-button{
+	margin-top:-10px;
+	float:none;
+	text-align:center;
+}
+.save-button2{
+	margin-top:-10px;
+	float:none;
+	text-align:center;
+	margin-right:70px;
+}
+.custom-fields{
+	float:right;
+	margin-right:10px;
+}
+.save-button1{
+	margin-top:-10px;
+	float:right;
+	margin-right:50px;
+}
+.save-button3{
+	margin-top:30px;
+	float:right;
+	margin-right:190px;
+}
+.save-button4{
+	float:none;
+	text-align:center;
+	margin-right:60px;
+	margin-top:20px;
+}
+.save-button5{
+	margin-top:10px;
+	float:right;
+	margin-right:50px;
+}
+.reward_table th,
+.reward_table td{
+	text-align:center;
+}
+.bulk-discounts,
+.special{
+	border:1px solid #ccc;
+	border-left:none;
+	padding-left:0px;
+}
+.plus-circle{
+	font-size:36px;
+	margin-right:20px;
+	color:#4F8EDD;
+	position:relative;
+}
+.cog{
+	font-size:36px;
+	margin-right:20px;
+	color:rgb(67, 185, 104);
+	position:relative;
+}
+.cog:hover{
+	font-size:36px;
+	margin-right:20px;
+	color:rgb(67, 185, 104);
+	position:relative;
+}
+.save-button6{
+	padding:5px 10px;
+	background-color:#2A80B9;
+	color:#fff;
+	position:absolute;
+	margin-top:12px;
+}
+.add-options{
+	margin-top:10px;
+}
+.add-options2{
+	visibility:hidden;
+	margin-bottom:15px;
+}
+.product-attributes{
+	font-size:10px;
+	font-style:italic;
+}
+.category-selector {
+	padding-left:30px;
+}
+.category-selector ul,li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.selector_{
+	padding-left:15px;
+}
+.selector_ .form-control{
+	padding:0px;
+}
+.selector_ option{
+	padding:10px;
+	border-bottom:1px solid #ccc;
+	font-size:16px;
+	font-weight:bold;
+	background-color:#E8EBF0;
+}
+.notifier{
+	text-transform:uppercase;
+	font-size:10px;
+}
+.hidden-div2{
+	visibility:hidden;
+}
+.dimension-box{
+	padding-left:0px;
+}
+.man-cat{
+	margin-top:20px;
+}
+.fg-40,.fg-60{
+	padding-bottom:40px;
+}
+.fg-55{
+	padding-bottom:55px;
+}
+.fg-72{
+	padding-bottom:72px;
+}
+.fg-325{
+	padding-bottom:325px ;
+}
+@media only screen and (max-width:575px){
+	.fg-40,
+	.fg-60,
+	.description-form,
+	.fg-325,
+	.fg-55,
+	.fg-72{
+	padding-bottom:0px;
+	}
+	.side-form{
+		border-left:none;
+		border-top:1px solid #ccc;
+	}
+	.dimension-box{
+		margin-bottom:5px;
+	}
+	.hidden-div2{
+		display:none;
+	}	
+}
+@media only screen and (min-width:576px) and (max-width:768px){
+	.fg-325{
+	padding-bottom:352px ;
+	}
+	.side-form{
+		border-left:none;
+	}
+}
+@media only screen and (min-width:768px) and (max-width:865px){
+	.fg-325{
+	padding-bottom:470px ;
+	}
+	.fg-60{
+		padding-bottom:60px;
+	}
+}
+@media only screen and (min-width:866px) and (max-width:1160px){
+	.fg-325{
+	padding-bottom:352px ;
+	}
+	.fg-60{
+		padding-bottom:60px;
+	}
+}
+
+/*------Products CSS Ends-----*/
+
+/*------Generate Coupons CSS Starts-----*/
+
+.cc-row{
+	border-bottom:2px solid #000;
+	padding-bottom:10px;
+}
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.form-group label{
+	font-weight:bold;
+}
+ul,li {
+	margin:0; padding:0; list-style:none;
+}
+.fg-3{
+	padding-bottom:30px;
+}
+.fg-42{
+padding-bottom:42px;
+}
+.fg-56{
+	padding-bottom:56px;
+}
+.fg-6{
+	padding-bottom:60px;
+}
+.fg-72{
+	padding-bottom:72px;
+}
+.fg-86{
+	padding-bottom:86px;
+}
+.pd-15{
+	padding-bottom:15px;
+}
+.hidden-box2{
+	visibility:hidden;
+}
+.row-save-button{
+	margin-top:50px;
+	margin-right:15px;
+	float:right;
+	text-align:center;
+}
+@media only screen and (max-width:575px){
+.fg-3,.fg-42,.fg-56,.fg-6,.fg-72,.fg-86{
+	padding-bottom:10px;
+}
+.hidden-box2{
+	display:none;
+}
+.margin-input{
+	margin-bottom:10px;
+}
+}
+/*@media only screen and (min-width:768px) and (max-width:1366px){
+.fg-3{
+	padding-bottom:35px;
+}
+.fg-42{
+padding-bottom:56px;
+}
+.fg-56{
+	padding-bottom:71px;
+}
+.fg-6{
+	padding-bottom:86px;
+}
+.fg-72{
+	padding-bottom:92px;
+}
+.fg-86{
+	padding-bottom:136px;
+}
+.hidden-box2{
+	display:none;
+}
+.margin-input{
+	margin-bottom:10px;
+}
+}*/
+@media only screen and (min-width:768px) and (max-width:1023px){
+	.for-ipad{
+		width:100%;
+	}
+}
+@media only screen and (min-width:1024px) and (max-width:1366px){
+	.for-ipad{
+		width:70%;
+	}
+}
+/*------Generate Coupons CSS Ends-----*/
+
+/*------Categories CSS Starts-----*/
+.category-list{
+	margin-left:10px;
+}
+.input-box{
+	margin-top: 10px !important;
+	position: absolute;
+	cursor: pointer;
+	margin-left:-45px;
+}
+.input-box2,.input-box4,.input-box5,.input-box6{
+	margin-top: 10px !important;
+	position: absolute;
+	margin-left: -20px !important;
+	cursor: pointer;
+}
+.input-box3{
+	margin-top: 10px !important;
+	position: absolute;
+	margin-left: -20px !important;
+	cursor: pointer;
+}
+.dd-item button{
+	margin:7px 0px !important;
+}
+
+/*------Categories CSS Ends-----*/
+
+/*------Comission Type CSS Starts-----*/
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.row .table td{
+	font-weight:bold;
+}
+.commission-type{
+	margin-top:30px;
+ }
+ .nav-item-pencil{
+	float:right;
+	margin-right:20px;
+}
+.text-container{
+	text-align:center;
+	margin-top:50px;
+	background-color:#1FB9AD;
+	padding-top:15px;
+}
+.product-text{
+	text-transform:uppercase;
+	color:#fff;
+}
+@media only screen and (max-width:443px){
+	.commission-type ul li:nth-child(2){
+		margin-bottom:10px;
+	}		
+}
+/*------Comission Type CSS Ends-----*/
+
+/*------Comission Type 2 CSS Starts-----*/
+
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.row .table td{
+	font-weight:bold;
+}
+.commission-type table td input{
+	margin-top:6px;
+}
+.commission-type table th .edit-button{
+	color:#000;
+	padding:4px 10px;
+	background-color:#F49346;
+}
+.commission-type table .confirm-button{
+	color:#000;
+	padding:4px 10px;
+	background-color:#44B968;
+}
+.fr-1{
+float:right;
+}
+.fr-td-1{
+float:right;
+}
+.fr-td-1 input{
+	padding-left:5px;
+
+}
+/*------Comission Type 2 CSS Ends-----*/
+
+/*------Gift Vouchers CSS Starts-----*/
+
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.row .table td{
+	font-weight:bold;
+}
+.gift-vouchers{
+	border-bottom:2px solid #000;
+	padding-bottom:10px;
+}
+.row-tabs table .red-head{
+	color:red;
+}
+.gift-pencil{
+	color:#000;
+}
+/*------Gift Vouchers CSS Ends-----*/
+
+/*------Varients CSS Starts-----*/
+
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.row .table td{
+	font-weight:bold;
+}
+.row-tabs table td input{
+	margin-top:6px;
+}
+.pagination{
+	float:right;
+	margin-right:10px;
+}
+.page-number{
+	font-size:10px;
+}
+.table-varients td:nth-child(3){
+	width:600px;
+	max-width:600px;
+}
+/*------Varients CSS Ends-----*/
+
+/*------Update Varients CSS Starts-----*/
+
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.row .table td{
+	font-weight:bold;
+}
+.varient-multi{
+	padding-left:0px;
+}
+.varient-multi .form-control{
+	padding:0px;
+}
+.varient-multi option{
+	padding:10px;
+	border-bottom:1px solid #ccc;
+	font-size:12px;
+	font-weight:bold;
+	background-color:#E8EBF0;
+}
+.varients{
+	border-bottom:2px solid #000;
+	padding-bottom:10px;
+}
+.varient-heading{
+	padding:10px;
+	background-color:#BFBFBF;
+}
+.adviser{
+	padding:5px;
+	text-transform:uppercase;
+}
+.submit-button{
+	margin-top:30px;
+	float:right;
+	margin-right:20px;
+ }
+/*------Update Varients CSS Ends-----*/
+
+/*------View Products CSS Starts-----*/
+.view-products{
+	border-bottom:2px solid #000;
+	padding-bottom:10px;
+}
+.view-products-heading{
+	padding:10px;
+	text-align:center;
+}
+.done-check{
+	padding:5px;
+	background-color:#43b968;
+	color:#fff;
+}
+.cancel-times{
+	padding:5px;
+	background-color:red;
+	color:#fff;
+}
+.cancel-times:focus,.done-check:focus{
+	color:#fff;
+}
+.view-products-row  table td:nth-child(7){
+	width:350px;
+}
+.view-products-row  table td input{
+	margin-top:6px;
+}
+.view-products-row table td ul{
+	margin-top:10px;
+	padding-left:5px;
+}
+.view-products-row table td ul li{
+	margin-right:5px;
+}
+.view-products-row table td ul li a{
+	color:#000;
+}
+.view-products-row table th{
+	color:red;
+}
+/*------View Products CSS Ends-----*/
+
+
+/*------Settings CSS Starts-----*/
+.btn-custom{
+	background-color:#1FB9AD;
+	color:#fff;
+}
+.image-box{
+	margin-bottom:10px;
+}
+.hidden-box{
+	visibility:hidden;
+	margin-bottom:50px;
+}
+.form-margin{
+	margin-bottom:15px;
+}
+.credit-status{
+	border:1px solid #E8E8E8;
+	text-align:center;
+	border-radius:5px;
+	background-color:#F7F8FA;
+	margin-bottom:50px;
+}
+.credit-status p{
+	margin-bottom:0;
+	padding:10px;
+	font-weight:bold;
+}
+.custom-table{
+	border-radius:4px;
+}
+.custom-table th{
+	text-align:center;
+}
+.account-form{
+	margin-left:100px;
+}
+.account-save-button{
+    float: right;
+    margin-right: 0px;
+}
+.account-form p{
+	margin-bottom:0;
+	margin-top:10px;
+}
+.agreement p{
+	color:#43b968;
+}
+.time-section{
+	padding:10px 60px;
+	border:1px solid #ccc;
+	text-align:center;
+}
+.btn-setup-submit{
+	padding:10px 50px;
+}
+.btn-setup-submit:focus,
+.btn-setup-submit:active{
+	background-color:#4BB865;
+	border-color:#4BB865;
+}
+.btn-setup-upload:focus,
+.btn-setup-upload:active{
+	background-color:#4BB865;
+	border-color:#4BB865;
+	color:#fff;
+}
+.btn-setup-download{
+	padding:10px 28px;
+}
+.btn-setup-upload{
+	padding:10px 25px;
+}
+.setup-submit{
+	text-align:center;
+	margin-bottom:20px;
+}
+.pad-5{
+	padding:5px 10px !important;
+}
+.sel-pad{
+	padding:5px !important;
+	color:gray;
+	background:transparent;
+}
+@media only screen and (max-width:768px){
+	.nav-item2{
+		width:100%;
+	}
+	.account-form{
+		margin-left:0px;
+	}
+}
+/*------Settings CSS Ends-----*/
+
+/*------Add Products CSS Starts-----*/
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.pagination{
+	float:right;
+	margin-right:10px;
+}
+.page-number{
+	font-size:10px;
+}
+.box1,.box2,.box3{
+	text-align:center;
+	height:300px;	
+}
+.box1,.box2{
+	border-right:2px solid #ccc;
+}
+.box1 h4,.box2  h4{
+	background-color:#000;
+	padding:15px;
+	color:#fff;
+	border-radius:5px;
+}
+.box1 ul,.box2  ul,.box3 ul{
+	margin-top:30px;
+}
+.box1 ul li,.box2 ul li,.box3 ul li{
+	list-style-type:circle;
+	font-size:16px;
+	text-align:left;
+	margin-left:15px;
+}
+.box3 h4{
+	background-color:#000;
+	padding:10px 15px;
+	color:#fff;
+	border-radius:5px;
+}
+.box3 h4 p{
+	margin-bottom:0px;
+}
+.add-products .btn-success{
+	border-radius:5px;
+}
+.upload-products{
+	visibility:hidden;
+}
+.upload-products1{
+	visibility:hidden;
+}
+@media only screen and (max-width:767px){
+	.box2,.box3{
+		margin-top:10px;
+	}
+	.upload-products{
+		display:none;
+	}
+	.upload-products1{
+		visibility:hidden;
+}
+}
+@media only screen and (min-width:768px) and (max-width:1024px){
+	.upload-products{
+		visibility:hidden;
+	}
+	.upload-products1{
+		display:none;
+	}
+	.text-cont{
+		font-size:16px;
+	}
+}
+
+/*------Add Products CSS Ends-----*/
+
+/*------Add Products 1/1 CSS Starts-----*/
+
+
+
+
+/*------Add Products 1/1 CSS Ends-----*/
+
+/*------Upload Excel CSS Starts-----*/
+.row-upload{
+	margin-top:20px;
+}
+.row-upload ul li{
+	list-style-type:circle;
+	font-size:14px;
+}
+.row-upload .row{
+	margin-left:40px;
+}
+.btn-download{
+	background-color:#10ACF6;
+	border-radius:0px;
+	color:#fff;
+	padding:4px;
+	margin-left:20px;
+}
+.downloadnow{
+	margin-left:30px;
+	color:red;
+}
+.btn-upload{
+	border-radius:0px;
+	color:#fff;
+	padding:4px;
+	margin-left:-3px;
+}
+.x201-table td:nth-child(5){
+	max-width:50px;
+}
+@media only screen and (min-width:768px) and (max-width:1024px){
+.upload-excel{
+	margin:0 -7px;
+}	
+}
+/*------X201 CSS Starts-----*/
+.row-x201{
+	border-bottom:2px solid #000;
+	padding-bottom:10px;
+}
+.box{
+	border:none !important;
+	background:transparent !important;
+}
+.table td{
+	vertical-align:middle;
+}
+ul#menu li {
+	display:inline;
+}
+.row label{
+	padding:10px;
+	}
+.btn-outline-primary{
+	background-color:black;
+	color:#fff;
+	border:none;
+}
+.btn-outline-primary:hover{
+	border:none;
+	color:#fff;
+}
+.pagination{
+	float:right;
+	margin-right:10px;
+}
+.page-number{
+	font-size:10px;
+}
+.upload-images a{
+	padding:5px;
+	background-color:black;
+	color:white;
+	border-radius:5px;
+}
+.x201-table{
+	margin-top:20px;
+}
+.x201-table table,.x201-table table th{
+	text-align:center;
+}
+.x201-table table td{
+	font-weight:normal !important;
+}
+.x201-table .fa-pencil,.x201-table .fa-times{
+	color:#000;
+}
+/*------X201 CSS Ends-----*/
+
+
+/*------Upload Excel CSS Starts-----*/
+.form-row{
+	margin-left:60px !important;
+}
+.form-row  a{
+	color:#000;
+	margin-left:10px;
+}
+.upload-excel h6{
+	margin-left:15px !important;
+}
+.form-row ul{
+	margin-left:40px;
+}
+.form-row ul li{
+	list-style:none;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  border-radius:5px;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+.category-excel{
+	padding-left:0px;
+}
+.category-excel li{
+	display:inline-block;
+	padding:5px 5px 5px 0px;
+}
+.category-excel li .fa-times{
+	color:#000;
+}
+.mb-20{
+	margin-bottom:20px;
+}
+#upload-excel input{
+	padding-left:5px;
+}
+#upload-excel ::-webkit-input-placeholder {
+    text-align: center;
+}
+#upload-excel :-moz-placeholder {
+    text-align: center;
+}
+#upload-excel ::-moz-placeholder {
+    text-align: center;
+}
+#upload-excel :-ms-input-placeholder {
+    text-align: center;
+}
+/*------Upload Excel CSS Ends-----*/
+
+.upload-list{
+	margin-bottom:15px;
+	border-bottom:1px solid #ccc;
+}
+.down-upload{
+	text-align:center;
+}
+.btn-submitall{
+	font-size:18px;
+	text-transform:uppercase;
+	padding-left:50px;
+	padding-right:50px;
+}
+/*------Returns CSS Starts-----*/
+
+.row-returns{
+	margin-left:100px;
+	margin-top:30px;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+.row-returns{
+	margin-left:10px;
+	margin-top:30px;
+}
+}
+.row-returns .form-group{
+	border-bottom:1px dashed #ccc;
+}
+/*------Returns CSS Ends-----*/
+
+/*------View Order CSS Starts-----*/
+
+.view-products-heading2{
+	padding:10px;
+	text-align:center;
+	background-color:#212330;
+}
+.pr-20{
+	padding-right:20px;
+}
+@media only screen and (min-width:768px) and (max-width:1024px){
+	.view-products-heading{
+		text-align:left !important;
+	}
+	.pr-20{
+		margin-right:30px;
+	}
+}
+.pending{
+	padding:6px;
+	width:100%;
+	background-color:#E8EBF0;
+	color:#000;
+	margin-right:20px;
+	border:1px solid #000;
+}
+.order-id{
+	padding:6px 15px ;
+	margin-top:2px;
+	background-color:black;
+	color:#fff;
+}
+.order-id:hover,.order-id:focus{
+	color:#fff;
+}
+.pending:hover,.pending:focus{
+	color:#000;
+}
+.filter,.update,.print{
+	padding:5px 10px;
+	color:#fff;
+	margin-right:15px;
+}
+.filter:hover,.update:hover,.print:hover,
+.filter:focus,.update:focus,.print:focus{
+	color:#fff;
+}
+.filter{
+	background-color:#1FB9AF;
+}
+.update{
+	background-color:#F44236;
+}
+.print{
+	background-color:#44B968;
+}
+.miss-order{
+	padding:5px 15px;
+	border:1px solid #000;
+	color:#000;
+	font-weight:bold;
+	margin-right:15px;
+}
+.view-default{
+	padding:5px 15px;
+	color:#fff;
+	margin-left:15px;
+	background-color:#1FB9AF;
+}
+.view-default:hover,.view-default:focus{
+	color:#fff;
+}
+.miss-order:hover{
+	color:#000;
+}
+.done-check:hover,.cancel-times:hover{
+	color:#fff;
+}
+.custom-dropdown{
+	padding:.5rem 113px .5rem 5px;
+}
+.selectall{
+	padding:5px 10px;
+	color:#fff;
+	cursor:default;
+}
+.selectall:hover,.selectall:focus{
+	color:#fff;
+}
+.selectall input{
+	margin-right:15px;
+	vertical-align:middle;
+}
+.hidden-div{
+	visibility:hidden;
+}
+.filterall{
+	padding:5px 10px;
+	color:#000;
+	cursor:default;
+}
+.filterall:hover,.filterall:focus{
+	color:#000;
+}
+.filterall{
+	margin-right:10px;
+	vertical-align:middle;
+}
+.select-order{
+	padding:5px;
+	border:none;
+	margin-top:-3px;
+}
+.filter-order{
+	padding:5px 5px 6px 5px;
+	border:none;
+}
+@media only screen and (max-width:378px){
+	.add-orders{
+		margin-top:10px;
+	}
+}
+@media only screen and (max-width:370px){
+	.select-order,.search-btn{
+		margin-top:10px;
+	}
+}
+@media only screen and (max-width:393px){
+	.pr-20{
+		padding-right:0px;
+	}
+}
+@media only screen and (min-width:397px) and (max-width:570px){
+	.select-order{
+		margin-right:20px !important;
+	}	
+}
+@media only screen and (min-width:645px) and (max-width:869px){
+	.select-order{
+		margin-right:45% !important;
+	}	
+}
+@media only screen and (min-width:870px) and (max-width:990px){
+	.select-order{
+		margin-right:60% !important;
+	}	
+}
+@media only screen and (min-width:991px) and (max-width:1090px){
+	.select-order{
+		margin-right:60% !important;
+	}	
+}
+/*------View Order CSS Ends-----*/
+
+/*------Upload Source CSS Starts-----*/
+
+.paste-link{
+	margin-bottom:10px;
+	font-weight:normal;
+}
+.add-button{
+	padding:5px 10px;
+	border:1px solid #ccc;
+}
+.paste-link-box,.loading-box{
+	margin-bottom:10px;
+}
+.paste-link-box input{
+	padding-left:5px;
+}
+.upload-add-button{
+	margin-left:30px !important;
+}
+.upload-add-button a{
+	padding:5px 10px;
+	background-color:#4BCB73;
+	color:#fff;
+}
+.loading-box a{
+	color:#000;
+}
+.input-box-paste{
+	padding:10px;
+	margin-bottom:5px;
+}
+.fetch{
+	margin-bottom:10px;
+}
+.loading-box{
+	left:15%;
+	margin-top:60px;
+}
+.pdl-0{
+	padding-left:0px;
+}
+/*------Upload Source CSS Ends-----*/
+
+
+/*------Upload Source Table CSS Starts-----*/
+
+.pad-30{
+	padding:30px 0;
+}
+@media only screen and (max-width:767px){
+	.pad-30{
+		padding:10px 0;
+	}
+}
+
+
+
+/*------Upload Source Table CSS Ends-----*/
+
+
+
+/*------Product Returns CSS Starts-----*/
+.product-return-row{
+	margin-top:20px;
+}
+.product-return-row table thead{
+	background-color:#000;
+	color:#fff;
+}
+.product-return-row table tr th:nth-child(8),
+.product-return-row table tr th:nth-child(9){
+	width:150px;
+	max-width:150px;
+}
+.filter-row td:nth-child(2) input,
+.filter-row td:nth-child(3) input,
+.filter-row td:nth-child(4) input,
+.filter-row td:nth-child(5) input,
+.filter-row td:nth-child(6) input,
+.filter-row td:nth-child(7) select{
+	width:84px;
+	padding:2px 5px;
+}
+
+
+/*------Product Returns CSS Ends-----*/
+
+/*------Shipping Labels CSS Starts-----*/
+.shipping-label{
+	margin-top:20px;
+}
+.shipping-label table thead{
+	background-color:#000;
+	color:#fff;
+}
+.br-1,.br-3{
+	border-right:1px solid #fff;
+	text-align:center;
+}
+.table-center{
+	text-align:center;
+}
+/*------Shipping Labels CSS Ends-----*/
+
+/*------Generate Manifest CSS Starts-----*/
+@media only screen and (max-width:768px){
+.br-3{
+	min-width:120px !important;
+}
+}
+/*------Generate Manifest CSS Ends-----*/
+
+/*------Change Logo CSS Starts-----*/
+
+.logo-note{
+	background-color:#45C46B;
+	margin-top:20px;
+}
+.logo-note p{
+	margin-bottom:0px;
+	padding:15px ;
+	font-weight:700;
+}
+.upload-images{
+	visibility:hidden;
+}
+@media only screen and (max-width:575px){
+	.upload-images{
+		display:none;
+	}
+}
+/*------Change Logo CSS Ends-----*/
+
+
+/*------Payment Viewall CSS Starts-----*/
+
+.payment_summary{
+	border-bottom:1px solid #ccc;
+	margin-left:15px;
+	padding-bottom:10px;
+	margin-right:15px;
+}
+.box-block2,
+.box-block23{
+	padding-top:5px;
+}
+.box-block23{
+	margin-bottom:10px !important;
+}
+.payout{
+	background-color:#43B968;
+	text-align:center;
+	color:#fff;
+	margin-top:15px;
+	font-weight:bold;
+}
+.payment-table thead{
+	text-transform:uppercase;
+	background-color:#EDEEF0;
+}
+.payment-table td,
+.payment-table th{
+	text-align:center;
+}
+.payment-table td a{
+	color:#000;
+}
+.payment-table td a:hover{
+	color:#43B968;
+}
+
+/*------Payment Viewall CSS Ends-----*/
+
+/*------Admin CSS Starts-----*/
+
+.caret-up-custom{
+	color:#44B968;
+}
+.orders-number{
+	background-color:#F44236;
+	padding:2px 5px;
+	color:#fff;
+}
+.returns-number{
+	background-color:#3E70C9;
+	padding:2px 5px;
+	color:#fff;
+}
+.new-product{
+	font-size:11px;
+}
+.fa-line-chart-custom{
+	color:#F69E56;
+}
+.message-box,
+.index-table{
+	padding-left:0px;
+}
+.more-info-button{
+	padding: 2px 10px 2px 0px;
+    background-color: #21B9AD;
+    border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	color:#fff;
+}
+.more-info-button:hover,
+.more-info-button:focus,
+.more-info-button:visited{
+	color:#fff;
+}
+.info-circle-custom{
+	padding:4px 10px;
+	background-color:#1DA69C;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+}
+.table-grey-head{
+	background-color:#fff;
+}
+.stats-border{
+	border: 1px solid rgba(0,0,0,.125);
+}
+.m-item2{
+	display: block;
+    position: relative;
+    padding: 0.75rem 1rem 0.75rem 4.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.m-item2 .mi-icon{
+	position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.75rem;
+    text-align: center;
+    border-radius: 50%;
+}
+.dropdown-more23{
+	height:375px;
+	overflow-y:scroll;
+}
+.dropdown-more2{
+	display: block;
+    padding: 0.75rem 1rem;
+    background-color: #eee;
+    color: #999;
+    text-align: left;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+	margin-top:0px;
+	border-bottom:1px solid #ccc;
+}
+.dropdown-more2:hover,
+.dropdown-more2:visited,
+.dropdown-more2:focus{
+	color:#000;
+}
+.ml-15{
+	margin-left:-15px;
+}
+.ml-30{
+	margin-left:-30px;
+}
+@media only screen and (min-width:1054px) and (max-width:1329px){
+	.mb-32{
+		margin-bottom:32.5px !important; 
+	}
+}
+@media only screen and (min-width:992px) and (max-width:1329px){
+	.mb-30{
+		margin-bottom:32.5px !important; 
+	}
+}
+@media only screen and (max-width:600px){
+	.table-mobile{
+		margin-right:5px;
+	}
+}
+/*------Admin CSS Ends-----*/
+
+/*------Admin 2 CSS Starts-----*/
+
+.store-checkup-list{
+	/*margin-top:35px;*/
+	padding:10px;
+	background-color:#fff;
+}
+.store-checkup-list h3{
+	text-transform:uppercase;
+	text-align:center;
+}
+.store-checkup-list .has-success{
+	padding:6px;
+	font-size:14px;
+}
+.dropdown-more24{
+	height:378px;
+}
+.remmitance table tr th{
+	font-size:12px;
+	font-weight:bold;
+}
+.remmitance table tr th a,
+.remmitance table tr td a{
+	color:#000;
+}
+.remmitance_history{
+	border-bottom:1px solid #ccc;
+	padding-bottom:10px;
+}
+.remmitance table thead{
+	background-color:#EBEFEE;
+}
+.remmitance table tfoot{
+	text-align:center;
+}
+.services_agreements{
+	text-align:center;
+	background-color:#3F71CA;
+	padding:5px;
+	color:#fff;
+}
+.settlement-table tr td a{
+	color:#000;
+}
+@media only screen and (min-width:600px) and (max-width:767px){
+	.check-list{
+		column-count:3;
+		-webkit-column-count:3;
+		-moz-column-count:3;
+}
+}
+@media only screen and (min-width:320px) and (max-width:767px){
+	.dropdown-more24{
+	height:360px;
+	overflow-y:scroll;
+}
+	.store-checkup-list{
+	margin-bottom:15px;
+	}
+}
+.mt-15{
+	margin-top:15px;
+}
+/*------Admin 2 CSS Ends-----*/
+
+
+
+.ti-bar-chart{
+	text-align:center !important;
+}
+
+/*------Varients Select CSS Starts-----*/
+.category-row{
+	margin-left:15px;
+	margin-bottom:15px;
+}
+
+.all-sizes{
+	padding:5px 10px;
+	background-color:#000;
+	color:#fff;
+	margin-bottom:0px;
+}
+.table-row-design{
+	background-color: #DCDCDC;
+	border-bottom: 1px solid #ccc;
+}
+.table-row-selected{
+	background-color: #44B96A;
+	border-bottom: 1px solid #ccc;
+}
+.table-row-selected td{
+	color:#fff;
+}
+.btn-custom2{
+	padding-left:40px;
+	padding-right:40px;
+}
+.width-30{
+	width: 30px;
+	max-width: 30px;
+	text-align:center;
+}
+.width-190{
+	width: 190px;
+	max-width: 190px;
+	font-size:16px;
+}
+.width-25{
+	width: 25px;
+	max-width: 25px;
+	font-size:16px;
+}
+.width-25 a{
+	color:#000;
+}
+.width-30 .fa-times{
+	color:#F3372C;
+	font-size:10px;
+}
+.btn-success2{
+	padding:10px 50px;
+}
+
+	
+
+
+/*------Varients Select CSS Ends-----*/
+
+/*------Varients Set CSS Starts-----*/
+
+.varient-table thead th{
+	vertical-align:middle;
+	text-align:center;
+	font-weight:bold;
+}
+.varient-table tbody tr td{
+	text-align:center;
+}
+.set_price{
+	padding-left:5px;
+}
+.save-button24{
+	float:right;
+	margin-right:20px;
+}
+
+/*------Varients Set CSS Ends-----*/
+
+/*------Order Status CSS Starts-----*/
+
+.order-status,.shipping-details,.returns-status{
+	padding-bottom:10px;
+	border-bottom:2px solid #000;
+}
+.table-order{
+	margin-bottom:0px;
+}
+.br-5{
+	border-radius:5px;
+}
+.bg-fff{
+	background-color:#fff !important;
+}
+.bg-f5{
+background-color:#F5F5F5 !important;
+}
+.mt-20{
+	margin-top:20px;
+}
+.content-timeline{
+	font-weight:bold;
+	font-size:100% !important;
+}
+.pt-30{
+	padding-top:30px !important;
+}
+.ml-70{
+	margin-left:70%;
+}
+.ml-80{
+	margin-left:80%;
+}
+.print-shipping-btn{
+	padding: 2px 10px 2px 0px;
+    background-color: #F44236;
+	color:#fff;
+}
+.print-invoice-icon{
+	padding:4px 10px;
+	background-color:#1EA79D;
+}
+.print-invoice-btn{
+	padding: 2px 10px 2px 0px;
+    background-color: #17B7AD;
+	color:#fff;
+	margin-right:10px;
+}
+.print-shipping-btn:hover,
+.print-shipping-btn:focus,
+.print-shipping-btn:visited,
+.print-invoice-btn:hover,
+.print-invoice-btn:focus,
+.print-invoice-btn:visited{
+	color:#fff;
+}
+.print-shipping-icon{
+	padding:4px 10px;
+	background-color:#DD3C32;
+}
+.min-width-600{
+	min-width:600px;
+}
+/*------Order Status CSS Ends-----*/
+
+
+/*------View Returns CSS Starts-----*/
+.head-position{
+	position:absolute;
+}
+@media only screen and (max-width:768px){
+	.head-position{
+		position:static;
+}
+}
+@media only screen and (max-width:886px){
+	.btn-accept{
+		margin-bottom:5px;
+}
+}
+.row-view-returns{
+	margin-top:20px;
+	overflow-x:auto;
+}
+.row-view-returns table thead{
+	background-color:#363A3D;
+	color:#fff;
+}
+.row-view-returns table tr td{
+	font-weight:normal !important;
+}
+.no-border{
+	border-bottom:none;
+}
+/*------View Returns CSS Ends-----*/
+
+
+/*------View Returns Detail CSS Starts-----*/
+
+.mp-20{
+	padding-bottom:20px;
+	border-bottom:1px solid #ccc;
+}	
+.view-return{
+	margin-top:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #ccc;
+}
+.dropdown-menu2{
+	display:block;
+}
+/*------View Returns Detail CSS Ends-----*/
+
+/*------Inventory 1by1 CSS Starts-----*/
+
+.mbp-2{
+	padding-bottom:10px;
+	border-bottom:1px solid #ccc;
+}
+.ml-0{
+	margin-left:0px !important;
+}
+/*------Inventory 1by1 CSS Ends-----*/
+
+/*------Inventory CSS Starts-----*/
+.select-pmr{
+	color:gray;
+	background:transparent;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+	.select-pmr{
+		margin-bottom:10px;
+		margin-right:0px;
+	}
+}
+.pmr{
+	padding:10px 40px 10px 10px;
+	margin-right:20px;
+	width:180px;
+	max-width:180px;
+}
+.hidethis{
+	visibility:hidden;
+}
+
+
+/*------Inventory CSS Ends-----*/
+
+
+/*------Inventory Excel CSS Starts-----*/
+
+.sub-btn{
+	padding:10px 40px;
+}
+.down-btn{
+	padding: 10px 21px;
+    margin-top: 10px;
+}
+.up-btn{
+	padding:10px 14px;
+	margin-top:10px;
+}
+
+/*------Inventory Excel CSS Ends-----*/
+
+
+/*------User Management CSS Starts-----*/
+.row-roles label{
+	padding:2px;
+}
+.custom-checkbox{
+	position: absolute;
+    margin-left: -15px;
+    margin-top: 5px;
+}
+.mb-10{
+	margin-bottom:10px;
+}
+.user-list{
+	padding-left:0px;
+}
+.two-list{
+	 -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+@media only screen and (max-width:768px){
+	.two-list{
+	 -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+}
+}
+@media only screen and (max-width:326px){
+	.cancel-btn{
+		margin-top:10px;
+	}
+}
+/*------User Management CSS Ends-----*/
+
+
+/*------Web Analytics CSS Starts-----*/
+
+.user-data{
+	padding:80px 10px;
+}
+.user-data .t-content{
+	text-align:center;
+}
+.cent{
+	text-align:center;
+}
+
+/*------Web Analytics CSS Ends-----*/
+
+/*------Subscription CSS Starts-----*/
+
+.bg-ec1e32{
+	background-color:#ec1e32;
+	color:#FFF;
+}
+.renew-button,.renew-button:hover,.renew-button:active,.renew-button:visited{
+	background-color:#ec1e32;
+	color:#FFF;
+}
+.theme-color{
+	color:#EC1E32;
+}
+
+/*------Subscription CSS Ends-----*/
+
+
+/*------Admin Order CSS Starts-----*/
+
+.select-state,.search-product,.select-varient{
+	padding:5px;
+	width:100%;
+}
+.full-width{width:100% !important;}
+/*------Admin Order CSS Ends-----*/
+
+
+/*------Notices CSS Starts-----*/
+
+/*------Notices Center CSS Ends-----*/
+
+
+
+/*------Message Center CSS Starts-----*/
+
+/*------Message Center CSS Ends-----*/
+
+/* Dashboard Page*/
+.ml-15{
+	margin-left: 15px;
+}
+.select-box-sa{
+	padding: 5px 30px 5px 5px;
+	background-color: #E6E8ED;
+	margin-bottom: 10px;
+
+}
+.table-mobile{
+	overflow-x: auto;
+}
+.chart-easy-custom{
+	position: relative;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.chart-easy-custom .percent2{
+	display: block;
+    line-height: 40px;
+    z-index: 2;
+    font-size: 12px;
+    color: #2b2b2b;
+}
+.va-1 td{
+	vertical-align: middle;
+}
+/* Dashboard Page Ends*/
+
+.subscribers-pay{
+	padding: 8px 20px 8px 5px;
+	border:1px solid #ccc;
+	color: #ccc;
+}
+.bg-azure{
+	background: azure;
+}
+.creator-name{
+	color:#ccc;
+}
+.va-4 td,.va-4 th{
+	text-align: center;
+	vertical-align: middle;
+}
+.va-4 td a{
+	color:#000;
+}
+@media only screen and (max-width:675px){
+	.mb-5p{
+		margin-bottom:5px;
+	}
+	.pd715{
+		padding: 7px 15px;
+	}
+}
+.modal-check{
+	font-size:80px;
+	font-weight: bold;
+	color: #43b968;
+}
+.modal-header2{
+	border-bottom: none;
+}
+.plus-icon{
+	background-color: #4bcb73;
+	padding: 10px;
+	color: #fff;
+}
+.add-agree{
+	padding-right: 10px;
+	background-color: #fff;
+	color: #000;
+}
+.add-agree:focus,.add-agree:hover,.add-agree:visited{
+	color: #000;
+}
+.select-box-12{
+	padding: 5px 30px 5px 5px;
+	background-color: #E6E8ED;
+}
+.modal-body2{
+	padding: 20px;
+}
+.myform{
+	padding: 20px !important;
+}
+.close-btn{
+	padding: 2px !important;
+	border: 1px solid #ccc !important; 
+}
+.crop-btn{margin-top:10px;margin-left:30px;}

@@ -1,0 +1,825 @@
+<ul id="nav" class="hidden-xs">
+	<li class="mega-menu"><a href="{{url('products?catid=1')}}" class="level-top"><span>Electronics</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=288')}}"><span>Mobiles</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=771')}}"><span>Smart Phones</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=772')}}"><span>Featured Phones</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=773')}}"><span>CDMA Phones</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=770')}}"><span>Android</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2097')}}"><span>GSM Phones</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=296')}}"><span>Mobiles Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=355')}}"><span>Cases & Covers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=356')}}"><span>Headphones</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=360')}}"><span>Memory Cards</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=362')}}"><span>OTG Pendrives</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2037')}}"><span>Mobile Batteries</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=439')}}"><span>Laptop Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=441')}}"><span>Laptop Skins & Decals</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=442')}}"><span>Mouse</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=443')}}"><span>Keyboard</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=444')}}"><span>Cooling pads</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=445')}}"><span>Laptop Battery</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=295')}}"><span>Computer Peripherals</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=109')}}"><span>Printers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=396')}}"><span>Mini PC</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=398')}}"><span>Toners</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=399')}}"><span>Monitors</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=400')}}"><span>CPU</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=483')}}"><span>Network Components</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=484')}}"><span>Routers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=485')}}"><span>Wireless USB Adaptors</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=486')}}"><span>Switches</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=488')}}"><span>Cables</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=489')}}"><span>Data Cards</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=100')}}"><span>Home Appliances</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=124')}}"><span>Televisions</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=125')}}"><span>Washing Machines</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=126')}}"><span>Air Conditioners</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=127')}}"><span>Refrigerators</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=133')}}"><span>Lighting</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=102')}}"><span>Health Care Appliances</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=143')}}"><span>Blood Pressure Monitors</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=144')}}"><span>Massagers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=145')}}"><span>Glucometers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=146')}}"><span>Weighing Scales</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=147')}}"><span>Pedometers</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=104')}}"><span>Audio Video Appliances</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=166')}}"><span>Mp3 Players</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=167')}}"><span>Mp4 Players</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=168')}}"><span>Ipods</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=169')}}"><span>Portable Speakers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=170')}}"><span>Bluetooth Speakers</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=106')}}"><span>Games & Accessories </span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=106')}}"><span>PC Games</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=184')}}"><span>PS4 Games</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=185')}}"><span>PS3 Games</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2235')}}"><span>PS2 Games</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=189')}}"><span>Game Accessories</span></a> </li>						           
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1822')}}"><span>Office Electronics</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1823')}}"><span>Security Systems</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1824')}}"><span>Projectors & Presenters</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1825')}}"><span>Fax Machines</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1826')}}"><span>Note Counters</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1827')}}"><span>Paper Shredders</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=291')}}"><span>Camera</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=304')}}"><span>Point & Shoot</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=305')}}"><span>DSLR</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=307')}}"><span>Camcorder</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=310')}}"><span>Mirrorless</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=306')}}"><span>Advanced Point & Shoot</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=311')}}"><span>Camera Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=312')}}"><span>Lens</span></a> </li>
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=317')}}"><span>Binoculars & Optics</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=313')}}"><span>Memory Cards</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=314')}}"><span>Camera Bag</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=316')}}"><span>Digital Photo Frame</span></a> </li>						            
+								</ul>
+							</li>							
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="mega-menu"><a href="{{url('products?catid=3')}}" class="level-top"><span>Men</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2158')}}"><span>Clothing</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1218')}}"><span>Western Wear For Men</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1276')}}"><span>Sports Wear</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2126')}}"><span>Men Formals</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2127')}}"><span>Men Casuals</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1239')}}"><span>Footwear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1240')}}"><span>Sport Shoes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1241')}}"><span>Formal Shoes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1242')}}"><span>Casual Shoes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1246')}}"><span>Ethnic</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1247')}}"><span>Boot</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1325')}}"><span>Personal Care</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1326')}}"><span>Grooming & Wellness</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1327')}}"><span>Beauty Products</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1328')}}"><span>Hair Care</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1329')}}"><span>Bath Essentials</span></a> </li>
+								</ul>
+							</li> 
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1219')}}"><span>Ethnic Wear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1266')}}"><span>Kurtas</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1268')}}"><span>Sherwanis</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1970')}}"><span>dhoti and shawl</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2128')}}"><span>Pathani Kurta</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1269')}}"><span>Lungis</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1310')}}"><span>Mens Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1311')}}"><span>Men Bracelets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1312')}}"><span>Chains</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1313')}}"><span>Cuff links</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1314')}}"><span>Gemstones & Coins</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2096')}}"><span>Bags Belts & Wallets</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1588')}}"><span>Watches</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2129')}}"><span>Titan</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2130')}}"><span>Maxima</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2131')}}"><span>Casio</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2168')}}"><span>Fastrack</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1077')}}"><span>Sun Glasses</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1117')}}"><span>Aviator</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1118')}}"><span>Wayfarer</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1119')}}"><span>Sports</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1120')}}"><span>Rectangular</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1124')}}"><span>Sun Glasses</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1360')}}"><span>Fragrances</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1361')}}"><span>Deodorants</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1362')}}"><span>Perfumes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1363')}}"><span>Combo & Gift Set</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1916')}}"><span>Mists</span></a> </li>
+								</ul>
+							</li>							
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1289')}}"><span>Summer Wears</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1290')}}"><span>Shorts</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1291')}}"><span>3/4ths</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1292')}}"><span>Cargoes</span></a> </li>
+						            <!-- <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1916')}}"><span>Mists</span></a> </li> -->
+								</ul>
+							</li>							
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1367')}}"><span>Socks & Ties</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1368')}}"><span>Socks</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1369')}}"><span>Caps</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1370')}}"><span>Ties</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1380')}}"><span>Handkerchief</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1375')}}"><span>Shirt Cravats</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1222')}}"><span>Seasonal Wear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1299')}}"><span>Full Sleeves Jackets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1300')}}"><span>Sleeveless Jackets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1304')}}"><span>Thermals	</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1305')}}"><span>Mufflers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1307')}}"><span>Suits & Blazers</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1220')}}"><span>Inner & Sleep Wear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1270')}}"><span>Briefs</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1271')}}"><span>Vests</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1272')}}"><span>Boxers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1273')}}"><span>Pyjamas</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1294')}}"><span>Trunks</span></a> </li>
+								</ul>
+							</li>							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="mega-menu"><a href="{{url('products?catid=7')}}" class="level-top"><span>Women</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=492')}}"><span>Ethnic Wear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=503')}}"><span>Sarees</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=505')}}"><span>Salwar Suit</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=506')}}"><span>Dress Materials</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1194')}}"><span>Kurta & Kurti</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1932')}}"><span>Lehenga</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=493')}}"><span>Western Wear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1196')}}"><span>Tops, Shirts & Tunics</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1199')}}"><span>Skirts</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1200')}}"><span>Jump Suits</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1202')}}"><span>Crop Top</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1203')}}"><span>Dungarees</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=495')}}"><span>Women Footwear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1209')}}"><span>Heels</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1211')}}"><span>Wedges</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1212')}}"><span>Ballerinas</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1215')}}"><span>Casual Shoes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1216')}}"><span>Formal Shoes</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=499')}}"><span>Watches</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=551')}}"><span>Fastrack</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=552')}}"><span>Titan</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=554')}}"><span>Casio</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=555')}}"><span>Fossil</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=556')}}"><span>Timex</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=497')}}"><span>Sun Glasses</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=533')}}"><span>Oval</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=534')}}"><span>Over sized</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=535')}}"><span>Cat-eye</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=536')}}"><span>Aviator</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=537')}}"><span>Round</span></a> </li>
+								</ul>
+							</li>							
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=598')}}"><span>Women's Jewellery</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=539')}}"><span>Bridal Jewellery </span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=540')}}"><span>Party wear jewellery </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=541')}}"><span>Imitaion jewellery</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=542')}}"><span>Casual jewellery</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=543')}}"><span>Earrings</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=500')}}"><span>Fragrances</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=557')}}"><span>Perfumes</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=558')}}"><span>Deodorants</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=559')}}"><span>Roll on's</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=560')}}"><span>Fresh Flower</span></a> </li>						            
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=561')}}"><span>Sweet Spices</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=502')}}"><span>Women Wellness</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=587')}}"><span>Women safety</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=588')}}"><span>Women hygeine </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=589')}}"><span>Sexual wellness</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=590')}}"><span>Maternity Care</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2175')}}"><span>Women Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2176')}}"><span>Nail Arts </span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2177')}}"><span>Tattoo</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2178')}}"><span>Pocket Mirror</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2186')}}"><span>Nail Cutter</span></a> </li>						             
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2205')}}"><span>Stockings</span></a> </li>						             
+								</ul>
+							</li><!--  -->
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=501')}}"><span>Beauty & Skin Care</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=551')}}"><span>Fastrack</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=552')}}"><span>Titan</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=554')}}"><span>Casio</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=555')}}"><span>Fossil</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=556')}}"><span>Timex</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=496')}}"><span>Bags & Belts</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=529')}}"><span>Handbags</span></a> </li>						           
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=530')}}"><span>Sling Bags</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=531')}}"><span>Clutches & Wallets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=532')}}"><span>Totes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1963')}}"><span>Belts</span></a> </li>
+								</ul>
+							</li>							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="mega-menu"><a href="{{url('products?catid=8')}}" class="level-top"><span>Baby & Kids</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=288')}}"><span>Toys</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=670')}}"><span>Dolls & Soft Toys</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=671')}}"><span>Educational Toys</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=672')}}"><span>Action Figures</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=673')}}"><span>Games & Puzzels</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=674')}}"><span>Toy Guns & Weapons</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1704')}}"><span>Kids Apparel </span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1705')}}"><span>Boy's</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1706')}}"><span>Girl's</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1707')}}"><span>Unisex</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1708')}}"><span>Infant clothing</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=680')}}"><span>Baby Gear</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=683')}}"><span>Baby Care</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=695')}}"><span>Diapering</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=696')}}"><span>Health & Safety</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=697')}}"><span>Travel Gear</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=698')}}"><span>Nursing Gear</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=699')}}"><span>Bath & Grooming</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2069')}}"><span>Kids footwear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2070')}}"><span>Boy's footwear</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2071')}}"><span>Girl's Footwear</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2133')}}"><span>Kids Casual Shoes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2134')}}"><span>Kids Sports Shoes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2135')}}"><span>Kids Formal Shoes</span></a> </li>
+								</ul>
+							</li><!--  -->
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=684')}}"><span>Party Supplies</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=701')}}"><span>Balloons & Decorations</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=702')}}"><span>Party Accessories</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=703')}}"><span>Party Games</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=704')}}"><span>Costumes</span></a> </li>
+								</ul>
+							</li><!--  -->
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2055')}}"><span>Pram & cycles</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2056')}}"><span>Strollers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2057')}}"><span>Bouncers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2058')}}"><span>Baby Gym & Mats</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2059')}}"><span>Bassinets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2060')}}"><span>Walkers</span></a> </li>
+								</ul>
+							</li>						
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=685')}}"><span>Moms & Maternity</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=726')}}"><span>Diaper Bags</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=727')}}"><span>Breast Pumps</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=728')}}"><span>Maternity Accessories</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=729')}}"><span>Maternity Personal care</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=730')}}"><span>Breast & Nipple Care</span></a> </li>
+								</ul>
+							</li> 
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2074')}}"><span>Kids Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2075')}}"><span>Key Chain</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2076')}}"><span>Umbrellas</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2077')}}"><span>Stoles</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2136')}}"><span>Kids Socks</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2138')}}"><span>Kids Mufflers</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2078')}}"><span>Kids Sports</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2079')}}"><span>Skates</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2080')}}"><span>Chess</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2081')}}"><span>Carrom</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2082')}}"><span>Tambola</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2153')}}"><span>Shop by Brands</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2154')}}"><span>Pampers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2157')}}"><span>Himalaya</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2155')}}"><span>Mamy Poko Pants</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2156')}}"><span>Johanson's Baby</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2206')}}"><span>Huggies</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=680')}}"><span>Baby Gear</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=682')}}"><span>School Gear</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=766')}}"><span>Lunch Boxes</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=767')}}"><span>School Bags</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=768')}}"><span>School Kits</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=769')}}"><span>Water Bottles</span></a> </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="mega-menu"><a href="{{url('products?catid=1383')}}" class="level-top"><span>Home & Kitchen</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=593')}}"><span>Kitchen Appliances</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=613')}}"><span>Juicers & Mixers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=616')}}"><span>Induction cook tops</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=618')}}"><span>Choppers & Blenders</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=619')}}"><span>Food Processors</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=620')}}"><span>Electric Cookers</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=594')}}"><span>CookWare</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=626')}}"><span>Pressure Cookers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=627')}}"><span>Cookware sets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=628')}}"><span>Tawa & Kadhai</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=629')}}"><span>Pots & Pan</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=631')}}"><span>Barbeque & Accessories</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=595')}}"><span>Kitchen Tools</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=638')}}"><span>Chopper</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=639')}}"><span>Extraction</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=640')}}"><span>Kitchen Tool Set</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=642')}}"><span>Knives</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=641')}}"><span>Peelers & Slicers</span></a> </li>
+								</ul>
+							</li> 
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=596')}}"><span>Dining & Serving</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=686')}}"><span>Dinner Plates</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=689')}}"><span>Dish & Bowls</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=693')}}"><span>Dinner Sets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=694')}}"><span>Table Accessories</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2013')}}"><span>Kitchen Rolls</span></a> </li>
+						             
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=597')}}"><span>Storage</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=705')}}"><span>Flasks</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=706')}}"><span>Container</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=707')}}"><span>Milk Pot</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=708')}}"><span>Water Storage</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=709')}}"><span>Containers (Al)</span></a> </li>
+						             
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=598')}}"><span>Build your own Bar</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=712')}}"><span>Ashtray</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=714')}}"><span>Openers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=717')}}"><span>Bar Sets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=719')}}"><span>Wine Coolers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=724')}}"><span>Hip Flasks</span></a> </li>
+						             
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1384')}}"><span>Decor</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1390')}}"><span>Candles & Fragrances</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1391')}}"><span>Hookah</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1393')}}"><span>Lucky Bamboo</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1397')}}"><span>Photo Frames</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1398')}}"><span>Decorative Accessories</span></a> </li>
+						             
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1385')}}"><span>Home Furnishings</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1403')}}"><span>Curtains</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1404')}}"><span>Rugs & doormats</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1405')}}"><span>Bath</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1406')}}"><span>Bed & Sofa</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1407')}}"><span>Kids Furnishings</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1386')}}"><span>Furniture</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1410')}}"><span>Bedroom</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1412')}}"><span>Office Furniture </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1415')}}"><span>Kids Furniture </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1416')}}"><span>Puja Room </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1417')}}"><span>Utility Furniture </span></a> </li>
+								</ul>
+							</li> 
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1387')}}"><span>Garden</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1422')}}"><span>Pots & Planters</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1423')}}"><span>Garden Decor </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1424')}}"><span>Decorative Plants</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1425')}}"><span>Garden Utility</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1421')}}"><span>Seeds & Bulbs</span></a> </li>
+						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1388')}}"><span>Home Improvement</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1426')}}"><span>Home Cleaning </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1427')}}"><span>Bathroom Accessories</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1428')}}"><span>Home Utility </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1429')}}"><span>Home Essentials</span></a> </li>
+						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1389')}}"><span>Hardware & Tools</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1429')}}"><span>Curtain Brackets </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1430')}}"><span>Tools</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1431')}}"><span>Electrical Features </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1433')}}"><span>Kitchen Fitting & Sinks</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1435')}}"><span>Door & Door Fitting</span></a> </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="mega-menu"><a href="{{url('products?catid=1589')}}" class="level-top"><span>Health & Sports</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=5')}}"><span>Supplements</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=890')}}"><span>Work out Supplement</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=891')}}"><span>Proteins</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=892')}}"><span>Special Supplements</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=893')}}"><span>Vitamins & Minerals</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=894')}}"><span>Work Out Essentials</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> 
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1010')}}"><span>Omega Fatty Acids</span></a> </li>
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1011')}}"><span>Anti Oxidants</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1012')}}"><span>Fibre Supplements</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1013')}}"><span>Speciality Supplement</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1014')}}"><span>Fat Loss</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1015')}}"><span>Other Supplements</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=874')}}"><span>Weight Management</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=896')}}"><span>Fat Burners</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=897')}}"><span>Weight Gainers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=898')}}"><span>Meal Replacement</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=899')}}"><span>Weight Loss</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=875')}}"><span>Diabetic Care</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=927')}}"><span>Monitoring Device</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=928')}}"><span>Diabetic Food</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=929')}}"><span>Foot Care</span></a> </li>
+						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=876')}}"><span>Massagers</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=937')}}"><span>Handhold</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=938')}}"><span>Upper body Massagers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=939')}}"><span>Lower Body Massager</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=940')}}"><span>Foot Massager</span></a> </li>
+						             
+								</ul>
+							</li>														
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=878')}}"><span>Family Nutrition</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=946')}}"><span>Energy Drinks</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=947')}}"><span>Juices</span></a> </li>
+						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item" style="width:17%"> <a href="{{url('products?catid=879')}}"><span>Patient & Elderly Support</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=948')}}"><span>Adult Diapers </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=949')}}"><span>Body Supports</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=950')}}"><span>Hand Supports</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=951')}}"><span>Leg Supports</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=952')}}"><span>Mobility Supports</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=880')}}"><span>Clinical Supplies</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=954')}}"><span>Diagnostic Equipment</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=955')}}"><span>Disposables</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2191')}}"><span>Apparels</span></a> </li>
+						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a><span>Others</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1922')}}"><span>Ayurvedic Products</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1926')}}"><span>Eye Care</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2014')}}"><span>Skin Care</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2025')}}"><span>Hygiene</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item" style="width:16%"> <a href="{{url('products?catid=877')}}"><span>Health Care Device</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=941')}}"><span>Respiratory care</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=942')}}"><span>Weight Management</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=943')}}"><span>Pain and Stress Relievers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=944')}}"><span>Other Health Care Devices</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=945')}}"><span>Blood Pressure Monitors</span></a> </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="mega-menu"><a href="{{url('products?catid=1590')}}" class="level-top"><span>Books & Media</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=871')}}"><span>Books</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=881')}}"><span>Entrance Exam</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=882')}}"><span>Literature & Fiction </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=883')}}"><span>Academic & Professional </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=884')}}"><span>Biographic & Professional</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=885')}}"><span>Coffee Table</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=871')}}"><span>Books</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=886')}}"><span>Children & Teens </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=887')}}"><span>Regional Books</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=888')}}"><span>Business Management</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1000')}}"><span>Audio & Video Books</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1001')}}"><span>Comic and Graphic Novels</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=681')}}"><span>Art & Craft</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=763')}}"><span>Crafts kits</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=764')}}"><span>Clay & Modelling</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=765')}}"><span>Beads & Jewellery Kits</span></a> </li>
+						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1593')}}"><span>Stationary</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1745')}}"><span>Art & Craft Supplies</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1739')}}"><span>Office Equipment</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2181')}}"><span>Packaging Supplies</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1736')}}"><span>Pens & Markers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1737')}}"><span>Diaries & Notebooks</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1739')}}"><span>Office Supplies</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1767')}}"><span>File & Folders </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1590')}}"><span>Desktop Accessories</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1768')}}"><span>Organisers & Stands</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1769')}}"><span>Ropes & Sticky Notes </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1770')}}"><span>File boxes</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1739')}}"><span>Office Supplies</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1771')}}"><span>Sheet Protectors </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1772')}}"><span>Card Holders</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1773')}}"><span>Stamp Pads</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1774')}}"><span>Office Sets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1775')}}"><span>Punctures</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1741')}}"><span>E-Learning</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1762')}}"><span>Certification Tests</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1763')}}"><span>Online Tests</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1764')}}"><span>Online Courses</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1765')}}"><span>School Education</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1766')}}"><span>Education CDs</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=1742')}}"><span>Movies</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1759')}}"><span>Music</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1760')}}"><span>Movie</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1761')}}"><span>TV Shows </span></a> </li>
+						             
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item" style="width:18%;"> <a href="{{url('products?catid=1744')}}"><span>School Supplies</span></a>
+								<ul class="level1">
+									
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1755')}}"><span>Pencil Sharpeners & Erasers</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1756')}}"><span>Stationary Sets & Notebooks</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1757')}}"><span>Geometry Sets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1758')}}"><span>School bags, Lunch boxes & Water Bottles</span></a> </li>
+								</ul>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="mega-menu"><a href="{{url('products?catid=776')}}" class="level-top"><span>Automotive</span></a> 
+		<div class="level0-wrapper dropdown-6col">
+			<div class="container">
+				<div class="level0-wrapper2">
+					<div class="nav-block nav-block-center"> 						
+						<ul class="level0">
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=288')}}"><span>Car Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=788')}}"><span>Exterior Protection</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=789')}}"><span>Interiors & Comforts</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=790')}}"><span>Utility & Tools</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=791')}}"><span>Car Audio/Video</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=792')}}"><span>Protection & Security</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item">
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=793')}}"><span>Spare Parts</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1941')}}"><span>Sun Stands</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1942')}}"><span>Horns</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1943')}}"><span>Mirrors</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1944')}}"><span>Vacuum Cleaners</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=1952')}}"><span>Car Lighting</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=778')}}"><span>Bike Accessories</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=794')}}"><span>Helmets</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=795')}}"><span>Riding Gear</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=796')}}"><span>Safety & Maintenance </span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=797')}}"><span>Utility & Tools</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=798')}}"><span>Styling</span></a> </li>
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=780')}}"><span>Tyres</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=804')}}"><span>Car Tyres</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=805')}}"><span>Bike Tyres</span></a> </li>						            
+								</ul>
+							</li>
+							<li class="level3 nav-6-1 parent item"> <a href="{{url('products?catid=2083')}}"><span>Tools</span></a>
+								<ul class="level1">
+									<li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2084')}}"><span>Hand Tools</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2085')}}"><span>Power Tools</span></a> </li>
+						            <li class="level2 nav-6-1-1"> <a href="{{url('products?catid=2086')}}"><span>Measuring Tools</span></a> </li>						            
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+
+</ul>

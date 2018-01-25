@@ -1,0 +1,608 @@
+@extends('massengers/layout/layout')
+@section('js')
+
+<script src="{{asset('massengers/js/datepicker.js')}}"></script>
+
+<script>
+var date = new Date();
+date.setDate(date.getDate());
+
+$('#calendar').datepicker({ 
+    startDate: date
+});
+
+$(document).ready(function(){
+   //cover photo
+			$('#cover_photo').on('change', function(event){
+				event.preventDefault();
+				var file_data = $(this).prop('files')[0];   
+			    var form_data = new FormData();                  
+			    form_data.append('photo', file_data);
+				$.ajax({
+					url: "{{url('/uploadcheckoutproductimage')}}",
+					type: 'POST',
+					data: form_data,
+					dataType: 'html',
+					cache: false,
+					processData: false,
+			        contentType: false,
+			        dataType: 'json',
+			        xhr: function()
+					  {
+					    var xhr = new window.XMLHttpRequest();
+					    //Upload progress
+					    xhr.upload.addEventListener("progress", function(evt){
+					      if (evt.lengthComputable) {
+					        var percentComplete = (evt.loaded / evt.total)*100;
+					        //Do something with upload progress
+					        swal(''+percentComplete+'% Uploaded','','success');
+					      }
+					    }, false);
+					    //Download progress
+					    xhr.addEventListener("progress", function(evt){
+					      if (evt.lengthComputable) {
+					        var percentComplete = (evt.loaded / evt.total)*100;
+					        //Do something with download progress
+					        swal(percentComplete,' Uploaded','success');
+					      }
+					    }, false);
+					    return xhr;
+					  },
+			        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			        beforeSend: function(){
+			        },
+			        success: function(result){
+
+			        	if(result['success']){
+			        		$("input[name='cover_photo']").val(result['file_url']);
+			        	}
+
+			        	swal(result['message'],'',result['class']);
+			        }, 
+			        error: function(data, xhr){
+			        	var errors = data.responseJSON;
+			        	swal(errors['photo'][0],'','warning');
+			        }
+				});
+
+			}); 
+});
+
+
+$(document).ready(function(){
+	$("input[name='selectedDate'").change(function(event){
+		Date.prototype.getMonthText = function() {
+		  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		  return months[this.getMonth()];
+		}
+
+		Date.prototype.getDayText = function() {
+		  var days = ['Sun', 'Mon', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+		  return days[this.getDay()];
+		}
+		var date = new Date($(this).val());
+		$('#deliverydateofmonth').html(date.getDate());
+		$('#deliverymonth').html(date.getMonthText());
+		$('#deliveryweekday').html(date.getDayText());
+	});
+});
+
+function checkcorrectdate(captured){
+	var date = new Date();
+	date.setDate(date.getDate());
+	if(new Date(date) <= new Date(captured)){
+	    return true;
+	}else{
+		swal('Incorrect Date Choosen','Please Choose a Correct Date','error');
+		return false;
+	}
+}
+
+
+$(document).ready(function(){
+	$("input[name='shippingtime']").on('change', function(event){
+		var inputval = $(this).val();
+		var timeslottitle = '';
+		var error = true;
+		if(inputval == 'standard_delivery'){
+			timeslottitle = 'Standard Delivery - Free';
+			error = false;
+		}else if(inputval == 'fixtime_delivery'){
+			timeslottitle = 'Fixtime Delivery - Rs 200';
+			error = false;
+		}else if(inputval == 'mid_night_delivery'){
+			timeslottitle = 'Mid Night Delivery - Rs 200'
+			error = false;
+		}
+
+		if(!error){
+			$('.timeslottitle').html(timeslottitle);
+			$('#shippingmethod').html(timeslottitle);
+			$('#carousel-example-generic').carousel('next');
+		}else{
+			swal('Incorrect Delivery Option','Please Select a correct delivery option','error');
+		}
+
+	});
+});
+
+$(document).ready(function(){
+	$("input[name='delivery_option']").on('change', function(event){
+		var inputval = $(this).val();
+		var timeslottitle = '';
+		var error = true;
+		if(inputval == '12_15'){
+			timeslottitle = "12:00 - 15:00 hrs";
+			error = false;
+		}else if(inputval == '15_18'){
+			timeslottitle = "15:00 - 18:00 hrs"
+			error = false;
+		}else if(inputval == '18_21'){
+			timeslottitle = "18:00 - 21:00 hrs"
+			error = false;
+		}
+
+		if(!error){
+			$('#timeslot').html(timeslottitle);
+			$('#deliveryoptionmodal').modal('hide');
+
+		}else{
+			swal('Incorrect Delivery Option','Please Select a correct delivery option','error');
+		}
+	});	
+});
+
+// for form submit
+$(document).ready(function(){
+	$('#product_detail_submit_form').on('submit', function(event){
+		event.preventDefault();
+		var formData = $(this).serialize();
+		$.ajax({
+			url: "{{url('/validatebeforecheckout')}}",
+			type: 'POST',
+			data: formData,
+			dataType: 'json',
+			beforeSend: function(){
+				swal({
+				  title: 'Processing..',
+				  text: 'please do not referesh the page',
+				  showCancelButton: false,
+				  showConfirmButton: false
+				});
+			},
+			success: function(result){
+				if(result['message']){
+					window.location.href = "{{url('/product/checkout')}}/"+result['buynow'];
+				}
+			},
+			error: function(data){
+				errorsHtml = '';
+				$.each(data.responseJSON, function(key, value) {
+					if($.isArray(value)){
+						errorsHtml += value[0];
+					}else{
+						errorsHtml += value;
+					}
+					return false;
+	            });
+
+				swal(errorsHtml, '', 'error');
+			}
+		});
+	});
+});
+
+// add to cart
+
+$(document).ready(function(){
+	$('#add_to_cart_btn').on('click', function(event){
+		swal({
+		  title: "Input Desired Quantity",
+		  type: "input",
+		  showCancelButton: true,
+		  closeOnConfirm: false,
+		  inputPlaceholder: "input desired quantity",
+		}, 
+		function(quantity){
+			var productid = $("input[name='productid']").val();
+			var category  = $("input[name='category']").val();
+			var auth      = $("input[name='auth']").val();
+			var delivery_date =  $("input[name='selectedDate']").val();
+			var shippingtime = $("input[name='shippingtime']").val();
+			var delivery_option = $("input[name='delivery_option']").val();
+			$.ajax({
+				url: "{{url('/add_to_cart')}}",
+				type: 'POST',
+				dataType: 'json',
+				data: {productid:productid,category:category, auth:auth,quantity:quantity,selectedDate:delivery_date, shippingtime:shippingtime, delivery_option:delivery_option},
+				beforeSend: function(){
+					swal({
+					  title: 'Processing..',
+					  text: 'please do not referesh the page',
+					  showCancelButton: false,
+					  showConfirmButton: false
+					});
+				},
+				success: function(result){
+					if(result['message']){
+						swal('product added to cart successfully','','success');
+					}
+				},
+				error: function(data){
+					errorsHtml = '';
+					$.each(data.responseJSON, function(key, value) {
+						if($.isArray(value)){
+							errorsHtml += value[0];
+						}else{
+							errorsHtml += value;
+						}
+						return false;
+		            });
+
+					swal(errorsHtml, '', 'error');
+				}
+			});
+		});
+	});
+});
+
+</script>
+@endsection
+
+@section('content')
+<form id="product_detail_submit_form">
+{{csrf_field()}}
+<input type="hidden" name="auth" value="{{Auth::user() ? 'yes' : 'no'}}" >
+<div class="container-fluid pd-30">
+	<div class="container">
+		<ol class="breadcrumb ms-breadcrumb">
+		<li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+		  @foreach($breadCrumbCategories as $breadCrumbCategory)
+			<li class="breadcrumb-item"><a href="{{url('/category/'.$breadCrumbCategory['alias'])}}">{{$breadCrumbCategory['category_name']}}</a></li>
+		  @endforeach
+		</ol>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="container">
+	    <div class="col-md-9 pdres-0">
+	        <div class="row">
+        		<div class="col-md-5 col-sm-4 product-main-image" style="overflow:hidden;">
+        			<img width="300" src="{{$defaultImage}}"/>
+        		</div>
+        		<div class="col-md-7 col-sm-8 pdres-0 roboto-light">
+        			<div class="row product-title-row">
+            			<div class="col-md-8">
+            				<h3 class="mt-0 product-title">{{$product->product_name}}</h3>
+            				<p>SKU : {{$product->sku}}</p>
+            			</div>
+            			<div class="col-md-4 views">
+            				<span style="padding:0px; font-size:14px;"><i class="fa fa-eye"></i> 24,594</span>
+            				<span style="padding:0px; font-size:14px;"><i class="fa fa-gift"></i> 18,931</span>
+            			</div>
+        			</div>
+        			<div class="col-md-12">
+        			<ul class="nav nav-tabs product-desc">
+        				<li class="active"><a data-toggle="tab" href="#description">Description</a></li>
+        				<li><a data-toggle="tab" href="#delivery">Delivery Information</a></li>
+        			</ul>
+        
+        			<div class="tab-content pd-20">
+        				<div id="description" class="tab-pane fade in active">
+        				  {!! $product->product_description !!}
+        				</div>
+        				<div id="delivery" class="tab-pane fade">
+        					<p>Usually delivered in 3-4 days. Enter pincode for exact delivery dates/charges</p>
+        				</div>
+        			</div>
+        			@foreach($varientTypes as $varientType)
+        			<div class="row add-more">
+        				<h3 style="margin-left:15px;">Add some more love</h3>
+        				@foreach($varientValues[$varientType->varient_type_id] as $varient)
+        				<div class="col-md-3 col-xs-4 text-center">
+        					<label for="varient{{$varient->id}}"><img width="70" src="{{$defaultImage}}"/>
+        					<h5>{{$varient->value}}</h5></label>
+        					<input id="varient{{$varient->id}}" type="radio" name="varients" value="{{$varient->id}}">
+        					<h4><i class="fa fa-inr"></i> {{App\Http\Controllers\Massengers\Product\ProductController::getVarientPrice($product->id,$varient->id, $product->product_selling_price)}}</h4>
+        				</div>
+        				@endforeach
+        			</div>
+        			@endforeach
+        			
+        			<div class="row pd-20 loveletterform @if($category->image_upload_option == 'no') hidden @endif">
+        			    <div class="form-group col-md-12">
+        					<label class="col-md-4 pdl-0">Upload Image <span class="c-red">*</span></label>
+        					<input type="file" id="cover_photo" class="col-md-8"/>
+        				</div>
+        			</div>
+        			
+        			<input type="hidden" name="cover_photo" value="" />
+        			
+        			<div class="row pd-20 loveletterform @if($product->love_letter_options == 'no') hidden @endif">
+            				<div class="form-group col-md-4">
+            					<label>Paper Colour <span class="c-red">*</span></label>
+            					<select name="paper_color" class="form-control">	
+            					    <option value="none" selected>None</option>
+            						<option value="white">White</option>
+            						<option value="blue">Blue</option>
+            						<option value="red">Red</option>
+            						<option value="pink">Pink</option>
+            						<option value="violet">Violet</option>
+            					</select>
+            				</div>
+            				<div class="form-group col-md-4">
+            					<label>Ink Colour <span class="c-red">*</span></label>
+            					<select name="ink_colour" class="form-control">	
+            						<option value="none" selected>None</option>
+            						<option value="white">White</option>
+            						<option value="blue">Blue</option>
+            						<option value="red">Red</option>
+            						<option value="pink">Pink</option>
+            						<option value="violet">Violet</option>
+            					</select>
+            				</div>
+            				<div class="form-group col-md-4">
+            					<label>Emotions <span class="c-red">*</span></label>
+            					<select name="emotions" class="form-control">
+            					    <option value="none" selected>None</option>	
+            						<option value="happy">Happy</option>
+            						<option value="love">Love</option>
+            						<option value="excited">Excited</option>
+            						<option value="naughty">Naughty</option>
+            					</select>
+            				</div>
+            				<div class="form-group col-md-12">
+            					<label>Receipent's Name <span class="c-red">*</span></label>
+            					<input name="receipent_name" type="text" class="form-control col-md-8" />
+            				</div>
+            				<div class="form-group col-md-12">
+            					<label>Message(s)<span class="c-red">*</span></label>
+            					<textarea name="message" class="form-control" rows="4" maxlength="150" style="resize:none;"></textarea>
+            					<small>Maximum number of character: 150</small>
+            				</div>
+            			</div>
+            			
+            			
+            			    <ul class="service-detail">
+            					<li>
+            						<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            						<p>Trusted Company</p>
+            					</li>
+            					<li>
+            						<img src="{{asset('massengers/img/truck.png')}}">
+            						<p>Free Shipping</p>
+            					</li>
+            					<li>
+            						<img src="{{asset('massengers/img/pay.png')}}">
+            						<p>Secure payment</p>
+            					</li>
+            				</ul>
+            			</div>
+        			</div>
+    			</div>
+    			@if(count($products))
+                    <div class="row roboto-light recent-view">
+                		<ul class="nav nav-tabs">
+                			<li class="active"><a data-toggle="tab" href="#youmight">You Might Also Like</a></li>
+                		</ul>
+                		<div class="tab-content youmight">
+                			<div id="youmight" class="tab-pane fade in active">
+                			@foreach($products as $sameproduct)
+                				<div class="col-md-3 text-center">
+                					<a href="{{url('category/'.$cat_alias.'/product/'.$sameproduct->id)}}"><img width="200" src="{{$productImage[$sameproduct->id]}}"/></a>
+                					<h5><a href="{{url('category/'.$cat_alias.'/product/'.$sameproduct->id)}}">{{$sameproduct->product_name}}</a></h5>
+                					<h4 class="c-red"><i class="fa fa-inr"></i> {{$sameproduct->product_selling_price }}</h4>
+                				</div>
+                			@endforeach	
+                			</div>
+                		</div>
+                    </div>
+                    @endif	
+                
+                    @if(count($combos))                
+                    <div class="row roboto-light combo-view">
+                		<ul class="nav nav-tabs">
+                		@foreach($combos as $key => $combo)
+                			<li class="@if($key == 0) active @endif"><a data-toggle="tab" href="#combo-{{$combo->id}}">Combo {{$key+1}}</a></li>
+                		@endforeach
+                		</ul>
+                
+                		<div class="tab-content youmight">
+                			@foreach($combos as $key => $combo)
+                			<div id="combo-{{$combo->id}}" class="tab-pane fade in @if($key == 0) active @endif ">
+                				<div class="col-md-3 text-center">
+                					<img width="200" src="{{$defaultImage}}"/>
+                					<h5>{{$product->product_name}}</h5>
+                					<h4 class="c-red"><i class="fa fa-inr"></i> {{$product->product_selling_price}}</h4>
+                				</div>
+                				<div class="col-md-1 text-center pd-90">
+                					<i class="fa fa-plus c-red">
+                					</i>
+                				</div>
+                				<div class="col-md-3 text-center">
+                					<img src="{{$comboproductImage[$combo->id]}}"/>
+                					<h5>{{substr($comboproduct[$combo->id]->product_name, 0, 50)}}</h5>
+                					<h4 class="c-red"><i class="fa fa-inr"></i> {{$comboproduct[$combo->id]->product_selling_price}}</h4>
+                				</div>
+                				<div class="col-md-3 text-center pd-90">
+                				<a href="#" class="buy-now-btn"><i class="fa fa-credit-card"></i> Buy Now</a>
+                				<br/><br/>
+                				<p><i class="fa fa-inr"></i> {{$comboproduct[$combo->id]->product_selling_price + $product->product_selling_price}}</p>
+                				</div>
+                			</div>
+                			@endforeach
+                    	</div>
+                    </div>	
+                @endif
+            </div>	
+    		<div class="col-md-3 text-center price-section">
+    			<h2 class="c-red myriad"><i class="fa fa-inr"></i> {{$product->product_selling_price}}</h2>
+    				<input type="hidden" name="productid" value="{{$product->id}}">
+    				<input type="hidden" name="category" value="{{$cat_alias}}">
+    				
+    				<input type="number" min="1" value="1" class="delivery-control" name="quantity"  placeholder="Enter required quantity" style="display:none;"/><br />				
+    				<input type="text" name="pincode" value="251001" class="delivery-control" placeholder="*Enter Delivery Pincode"/>
+    				<small class="right"><a href="#" class="dont-know">Don't Know Pincode ?</a></small>
+    				<input type="text" class="delivery-control" value="muzaffarnagar" name="delivery_city" placeholder="*Enter Your City"/>
+    				<br/>
+    				<div class="inputdiv">
+    					<a href="javascript:void(0);" data-toggle="modal" data-target=".bs-example-modal-lg" id="datetimelink" class="activeinput" title="You can select date and time of delivery after providing valid pincode">* When ?</a>
+    				</div>
+    				<div id="datetimeshipping" data-toggle="modal" data-target=".bs-example-modal-lg" style="display: hidden;">
+    					<span id="deliverydateofmonth"></span>
+    					<span id="deliverymonth"></span>
+    					<span id="deliveryweekday"></span>
+    					<span id="shippingmethod"></span>
+    					<span id="timeslot"></span>
+    				</div>
+    				<button type="submit" class="buy-now-btn"><img src="{{asset('massengers/img/card-new.png')}}" width="16"> Buy Now</button>
+    				<a href="javascript:;" id="add_to_cart_btn" class="price-btn"><img src="{{asset('massengers/img/cart-new.png')}}" width="16"> Add to Cart</a>
+    			<br/>
+    			<div class="timerbox">
+    				<div class="col-sm-4 timeslot">
+    					<h2>4:20</h2>
+    				</div>
+    				<div class="col-sm-8 deliveryleft">
+    					<h4>Hours left for today's delivery</h4>
+    				</div>
+    			</div>
+    			<br/>
+    		</div>	
+	</div>
+</div>
+
+
+<input type="hidden" name="selectedDate">
+<div class="modal fade bs-example-modal-lg" id="deliveryoptionmodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="width:38em;margin:0 auto;">
+	<div class="modal-header">
+	 <a class="left" href="#carousel-example-generic" role="button" data-slide="prev" style="float:left; margin-top:5px;">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right" href="#carousel-example-generic" role="button" data-slide="next" style="float:right; margin-top:5px;">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a> 
+		<h4 class="modal-title" id="head-content">Select Delivery Option</h4>
+	</div>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+		<!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+			<div class="item active">
+				<div class="app">
+					<div class="app__main">
+						<div class="calendar">
+							<div id="calendar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div id="shippingmethoddiv">
+					<div class="scroll-pane">
+						<ul>
+							<li>
+								<a data-shippingmethod="EXPRESS_DELIVERY" class="timeslotdetails" data-ga-title="Standard Delivery" tabindex="0">
+									<input type="radio" value="standard_delivery" class="input-group-field applycoupon shippingtime" name="shippingtime" id="EXPRESS_DELIVERY" tabindex="0">
+									<label for="EXPRESS_DELIVERY">
+									<span class="rdo-span"></span>
+									<span class="timesloter">Standard Delivery</span>
+									</label>
+									<div class="input-group-button button del-method-btn">
+										<span class="delcost">Free</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a data-shippingmethod="FIXTIME_DELIVERY" class="timeslotdetails" data-ga-title="Fixed Time Delivery" tabindex="0">
+								<input type="radio" value="fixtime_delivery" class="input-group-field applycoupon shippingtime" name="shippingtime" id="FIXTIME_DELIVERY" tabindex="0">
+								<label for="FIXTIME_DELIVERY">
+								<span class="rdo-span"></span>
+								<span class="timesloter"> Fixed Time Delivery </span>
+								</label>
+								<div class="input-group-button button del-method-btn">
+								<span class="delcost webprice">
+									<span class="WebRupee"><i class="fa fa-inr"></i></span> 200</span>
+								</div>
+								</a>
+							</li>
+							<li>
+								<a class="timeslotdetails" tabindex="0">
+								<input type="radio" value="mid_night_delivery" class="input-group-field applycoupon shippingtime" name="shippingtime" id="MIDNIGHT_DELIVERY" tabindex="0" >
+								<label for="MIDNIGHT_DELIVERY">
+									<span class="rdo-span"></span>
+									<span class="timesloter">Mid Night Delivery </span>
+								</label>
+								<div class="input-group-button button del-method-btn">
+									<span class="delcost webprice">
+									<span class="WebRupee"><i class="fa fa-inr"></i></span> 200</span>
+								</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			 <div class="item">
+			  <div id="timeslotDiv">
+					<div class="row">
+						<div class="tabs-panel time-slot">
+							<div style="display:none;" class="shippingMethodName">Standard Delivery</div>
+							<div style="display:none;" class="shippingMethodId">EXPRESS_DELIVERY</div>
+							<div class="scroll-pane" data-ga-category="SelectDate &amp; Timeslot_Standard Delivery">
+								<ul>
+									<li><span class="timeslottitle">Standard Delivery - Free</span>
+										<ul class="slot">
+											<li class="timeslottable">
+												<a href="javascript:void(0);" data-ga-title="12:00 - 15:00 hrs" tabindex="0" >
+													<input type="radio" value="12_15" class="input-group-field " name="delivery_option" id="EXPRESS_DELIVERY-10020" tabindex="0">
+													<label for="EXPRESS_DELIVERY-10020">
+													<span class="rdo-span"></span>
+													<span class="timeSlotId" style="display:none;">10020</span>
+													<span class="timerange">12:00 - 15:00</span>&nbsp;<span class="hrs"> hrs</span>
+													<span class="priceblock" style="display:none;"><span class="timeslotprice">Free</span>
+													</span>
+													</label>
+												</a>
+											</li>
+											<li class="timeslottable">
+												<a href="javascript:void(0);" data-ga-title="15:00 - 18:00 hrs" tabindex="0">
+													<input type="radio" value="15_18" class="input-group-field " name="delivery_option" id="EXPRESS_DELIVERY-10045" tabindex="0">
+													<label for="EXPRESS_DELIVERY-10045">
+													<span class="rdo-span"></span>
+													<span class="timeSlotId" style="display:none;">10045</span>
+													<span class="timerange">15:00 - 18:00</span>&nbsp;<span class="hrs"> hrs</span><span class="priceblock" style="display:none;"><span class="timeslotprice">Free</span></span>
+													</label>
+												</a>
+											</li>
+											<li class="timeslottable">
+												<a href="javascript:void(0);" data-ga-title="18:00 - 21:00 hrs" tabindex="0">
+													<input type="radio" value="18_21" class="input-group-field " name="delivery_option" id="EXPRESS_DELIVERY-10021" tabindex="0">
+													<label for="EXPRESS_DELIVERY-10021">
+													<span class="rdo-span"></span>
+													<span class="timeSlotId" style="display:none;">10021</span>
+													<span class="timerange">18:00 - 21:00</span>&nbsp;<span class="hrs"> hrs</span>
+													<span class="priceblock" style="display:none;">
+													<span class="timeslotprice">Free</span></span>
+													</label> 
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+</form>
+@endsection

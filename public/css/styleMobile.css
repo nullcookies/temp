@@ -1,0 +1,157 @@
+/*--- Fonts ----*/
+
+@font-face{
+	font-family:mthin;
+	src:url('Montserrat-Thin.ttf');
+}
+@font-face{
+	font-family:mbold;
+	src:url('Montserrat-Bold.ttf');
+}
+@font-face{
+	font-family:mreg;
+	src:url('Montserrat-Regular.ttf');
+}
+.mthin{
+	font-family: mthin;
+}
+
+/*--- Spacing ----*/
+
+.pd-0{
+	padding: 0;
+}
+.pd-5{
+	padding: 5px 0;
+}
+.pd-10{
+	padding:10px 0;
+}
+.pd-15{
+	padding:15px 0;
+}
+.pd0510{
+	padding: 5px 10px 5px 0;
+}
+.pd1005{
+	padding: 5px 0px 5px 10px;
+}
+.pd-20{
+	padding:20px 0;
+}
+.pd-ban{
+	padding: 5px 0px 10px 0;
+}
+.lr-15{
+	padding-left:15px;
+	padding-right:15px; 
+}
+
+*{
+	margin:0;
+	padding: 0;
+}
+#pageone{
+	background-color: #e1e1e1;
+}
+.topheader{
+	text-align: center;
+	background-color:#167bcb;
+	padding-bottom: 15px;
+}
+
+.headerlist{
+	list-style: none;
+	text-align:center;
+	font-family:mthin;
+	padding: 10px 0;
+}
+.headerlist li{
+	display: inline-block;
+	padding: 5px 10px;
+}
+.headerlist li a{
+	text-decoration: none;
+	color: #fff;
+	font-weight: normal;
+}
+.headerlist li a:hover,.headerlist li a:focus,.headerlist li a:visited{
+	text-decoration: none;
+	color: #fff;
+}
+.headerlist input{
+	border-radius: 0px !important;
+}
+.searchbtn{
+	float: right;
+	margin-top: -45px;
+	border-radius: 0px !important;
+	background-color: #f2d03b !important;
+}
+.ui-content h2{
+	font-family: mthin;
+	background-color: #f2d03b;
+	padding-left: 15px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.ui-content .catlist{
+	font-family: mthin;
+}
+.ui-btn-icon-left:after{
+	right:.562em !important;
+}
+.ui-listview li .ui-btn-icon-right:after{
+	background-color:transparent;
+}
+.cartdiv{
+	padding: 15px;
+	background-color: #2e88d0;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align:left; 
+	color:#fff;
+	text-shadow: none;
+}
+.cartdiv .cartno{
+	background-color: #fcd91f;
+	padding: 2px 6px;
+	font-size:12px;
+	border-radius: 50%;
+}
+
+div.wrapper{
+	float:left; /* important */
+	position:relative; /* important(so we can absolutely position the description div */
+}
+div.description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	width:100%;
+	/* styling bellow */
+	background-color:black;
+	color:white;
+	opacity:0.6; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
+}
+p.description_content{
+	padding:10px;
+	margin:0px;
+	font-size: 30px;
+}
+.imagebox{
+	text-decoration: none;
+}
+.bg-white{
+	background-color: #fff;
+}
+.imagetext{
+	background-color: rgba(22,123,203,0.6);
+	padding: 10px 0;
+	text-align: center;
+	color:#fff;
+	text-decoration: none !important;
+	position: relative;
+	margin-top: -45px;"
+}

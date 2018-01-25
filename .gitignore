@@ -1,0 +1,17 @@
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+/config/database.php
+.htaccess
+favicon.ico
+index.php
+robots.txt
+massengers_latest_backup.zip
+web.config
+public/product_images/*
+error_log
+/nbproject/private/
+/nbproject/

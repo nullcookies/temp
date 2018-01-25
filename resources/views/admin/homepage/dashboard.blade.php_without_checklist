@@ -1,0 +1,379 @@
+@extends('admin/layouts/layout')
+
+@section('title')
+	| dashboard
+@endsection
+
+@section('pageTopScripts')
+    <link rel="stylesheet" href="{{asset(ADMIN_FILE_PATH.'/vendor/chartist/chartist.min.css')}}">
+	<link rel="stylesheet" href="{{asset(ADMIN_FILE_PATH.'/css/core.css')}}">
+	<link rel="stylesheet" href="{{asset(ADMIN_FILE_PATH.'/css/custom.css')}}">
+
+	<style>
+	.pd-3{
+		padding:35px 1.25rem;
+	}
+	.pdb-0{
+		padding-bottom:0px;
+	}
+	.dash-table th{
+		vertical-align: middle;
+	}
+	.newth th{
+		border-bottom:0 !important;
+	}
+	.tdintd{
+		padding:0 !important;
+		border-top:0 !important; 
+	}
+	.pdl0{
+	    padding-left:0px;
+	}
+	.pdr0{
+	    padding-right:0px;
+	}
+    .borrg{border: 1px solid rgba(0,0,0,.125);}
+    .nav-tabs {
+        border:0;
+    }
+    .nav-tabs .nav-link.active{
+        border:0;
+    }
+</style>
+@endsection
+
+@section('pageScripts')
+	
+
+	<script>
+
+	/* Main Chart */
+    var data1 = [
+    	@foreach($datewiseVisitors as $visitor)
+    		[{{$visitor}}],
+    	@endforeach
+    ];
+   
+    var labels = ["Visits"];
+    var colors = [
+        '#20b9ae',
+    ];
+
+    $.plot($("#main-chart"), [{
+        data : data1,
+        label : labels[0],
+        color : colors[0]
+    }], {
+        series : {
+            lines : {
+                show : true,
+                fill : true,
+                lineWidth : 3,
+                fillColor : {
+                    colors : [{
+                        opacity : 1
+                    }, {
+                        opacity : 1
+                    }]
+                }
+            },
+            points : {
+                show : true,
+                radius: 0
+            },
+            shadowSize : 0,
+            curvedLines: {
+                apply: true,
+                active: true,
+                monotonicFit: true
+            }
+        },
+        grid : {
+            labelMargin: 10,
+            color: "#aaa",
+            hoverable : true,
+            borderWidth : 0,
+            backgroundColor : "#fff",
+        },
+        legend : {
+            position : "ne",
+            margin : [0, -40],
+            noColumns : 0,
+            labelBoxBorderColor : null,
+            labelFormatter : function(label, series) {
+                // adding space to labes
+                return '' + label + '&nbsp;&nbsp;';
+            }
+        },
+        tooltip : true,
+        tooltipOpts : {
+            content : '%s: %y',
+            shifts : {
+                x : -60,
+                y : 25
+            },
+            defaultTheme : false
+        }
+    });
+	</script>
+	<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/vendor/chartist/chartist.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/vendor/easy-pie/jquery.easypiechart.min.js')}}"></script>
+
+	<script>
+		$('#chart-easy').easyPieChart({
+			animate: 2000,
+			size: 40,
+			lineWidth: 3,
+			barColor: '#f44236',
+			trackColor: '#ddd',
+			scaleColor: false,
+		});
+		</script>
+	<script>
+		
+/* =================================================================
+  Bar Chart
+================================================================= */
+
+var data = {
+  labels: [{{$graphDates}}],
+  series: [
+    [{{$normalOrderGraphData}}],
+    [{{$apiOrderGraphData}}]
+  ]
+};
+
+var options = {
+  seriesBarDistance: 10
+};
+
+var responsiveOptions = [
+  ['screen and (max-width: 640px)', {
+    seriesBarDistance: 5,
+    axisX: {
+      labelInterpolationFnc: function (value) {
+        return value[0];
+      }
+    }
+  }]
+];
+
+new Chartist.Bar('#barCh', data, options, responsiveOptions);
+	</script>
+	<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/js/app.js')}}"></script>
+	<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/js/demo.js')}}"></script>
+	<script type="text/javascript" src="{{asset(ADMIN_FILE_PATH.'/js/index.js')}}"></script>
+@endsection
+
+@section('bodyclass')
+fixed-sidebar fixed-header skin-default content-appear
+@endsection
+
+@section('content')
+
+<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-32">
+								<div class="box-block bg-white tile tile-1 mb-2">
+									<div class="t-icon right"><span class="bg-danger"></span><i class="ti-shopping-cart-full"></i></div>
+									<div class="t-content">
+										<h6 class="text-uppercase mb-1 mb-32">Orders</h6>
+										<h1 class="mb-1">{{$total_count}}</h1>
+										<span class="text-muted"><span class="orders-number">{{$diffFromTodayAndYesterday}}</span>&nbsp; from previous day</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+								<div class="box-block bg-white tile tile-1 mb-2">
+									<div class="t-icon right"><span class="bg-success"></span><i class="ti-bar-chart"></i></div>
+									<div class="t-content">
+										<h6 class="text-uppercase mb-1 mb-30">Delayed Orders</h6>
+										<h1 class="mb-1">{{$criticalOrders}}</h1>
+										<span class="text-muted"><span class="orders-number"><i class="fa fa-inr"></i>{{$criticalOrdersValue ? $criticalOrdersValue : 0}}</span>&nbsp; Total Value</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+								<div class="box-block bg-white tile tile-1 mb-2">
+									<div class="t-icon right"><span class="bg-primary"></span><i class="ti-package"></i></div>
+									<div class="t-content">
+										<h6 class="text-uppercase mb-1">Returns</h6>
+										<h1 class="mb-1">{{$return_count}}</h1>
+										<span class="text-muted"><span class="returns-number">{{$returnDiff}}</span>&nbsp; From Last Month</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-30">
+								<div class="box-block bg-white tile tile-1 mb-2">
+									<div class="t-icon right"><span class="bg-warning"></span><i class="ti-receipt"></i></div>
+									<div class="t-content">
+										<h6 class="text-uppercase mb-1 mb-30">Total Revenue</h6>
+										<h1 class="mb-1"><i class="fa fa-inr"></i> {{$totalRevenue}}</h1>
+										<span class="text-muted"><i class="fa fa-line-chart fa-line-chart-custom"></i>&nbsp; Your total Revenue</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-fluid">
+						<div class="col-md-8 pdl0">
+							<div class="row row-md">
+						</div>
+						<ul class="nav nav-tabs" role="tablist" style="background-color:#fff;">
+							<li class="nav-item">
+								<a class="nav-link active" href="#">Visitors Graph</a>
+							</li>
+							
+						</ul>
+						<div class="box-block bg-white b-t-0 mb-2">
+							<div class="chart-container demo-chart">
+								<div id="main-chart" class="chart-placeholder"></div>
+							</div>
+						</div>
+						</div>
+						<div class="col-md-4 pdr0">
+							<a class="dropdown-more dropdown-more2" href="{{url('admin/notices')}}">
+								<strong>View all notifications</strong>
+							</a>
+						<div class="bg-white dropdown-more23">
+							@foreach($notifications as $notification)
+								<div class="m-item m-item2">
+									<div class="mi-icon bg-info"><i class="ti-comment"></i></div>
+									<div class="mi-text">{!! substr($notification->title,0,50) !!}</div>
+									<div class="mi-text">{!! substr($notification->content,0,100) !!}</div>
+									<div class="mi-time">{!! $notification->created_at !!}</div>
+								</div>
+							@endforeach
+							
+							@if(!sizeof($notifications))
+							    <div class="m-item m-item2">
+									<div class="mi-text">No Notification</div>
+								</div>
+							@endif
+						</div>
+						</div>
+						<div class="row mb-2 mt-15">
+						<div class="col-md-12 table-mobile">
+							<table class="table table-grey-head mb-md-0 dash-table">
+								<thead>
+									<tr>
+										<th rowspan="2">#</th>
+										<th rowspan="2">Order Type</th>
+										<th rowspan="2">Price</th>
+										<th rowspan="2">Shipping Charge</th>
+										<th rowspan="2">order Status</th>
+									</tr>
+									<tr class="newth">
+										<th>Product UPC</th>
+										<th>Product Name</th>
+										<th>Quantity</th>
+										<th>Varients</th>
+										<th>Selling Price</th>
+										<th>order Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach($dashboardOrders as $key => $dashboardOrder)
+										<tr>
+											<th rowspan="{{count($products[$dashboardOrder->id])+1}}" scope="row">{{$key+1}}</th>
+											<td rowspan="{{count($products[$dashboardOrder->id])+1}}" ><span style="text-transform: uppercase;">{{strlen($dashboardOrder->paymentType) ? $dashboardOrder->paymentType : 'Online Payment'}}</span></td>
+											<td rowspan="{{count($products[$dashboardOrder->id])+1}}"><i class="fa fa-inr"></i>{{$dashboardOrder->orderAmount}}</td>
+											<td rowspan="{{count($products[$dashboardOrder->id])+1}}"><i class="fa fa-inr"></i>{{intval($dashboardOrder->shippingCharge)}}</td>
+											<td rowspan="{{count($products[$dashboardOrder->id])+1}}"><span style="width:70px; text-align:center" class="tag {{$class[$dashboardOrder->id]}}">{{$dashboardOrder->status}}</span></td>
+											<td colspan="5" class="tdintd">
+												@foreach($products[$dashboardOrder->id] as $product)
+												<tr>
+													<td>{{$product->product_id}}</td>
+													<td title="{{$product->product_name}}">{{substr($product->product_name,0,35)}}</td>
+													<td>{{$product->quantity}}</td>
+													<td>{{$product->varients}}</td>
+													<td>{{$product->selling_price}}</td>
+													<td ><a href="{{url('admin/orders/trackOrder/'.$dashboardOrder->id)}}" class="btn btn-sm btn-info btn-rounded mb-0 w-min-xs waves-effect waves-light">More info</a></td>
+												</tr>
+												@endforeach
+											</td>
+										</tr>
+									@endforeach
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="box-block pdl0 pdr0">
+						<div class="row" style="margin:0; margin-left:-15px;">
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-block b-b clearfix">
+									<h5 style="padding:10px 0;">Inventory</h5>
+									<div class="row">
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<div class="box-block tile tile-2 bg-danger mb-2 pd-3">
+												<div class="t-icon right"><i class="ti-shopping-cart-full"></i></div>
+												<div class="t-content">
+													<h1 class="mb-1">{{$inventory->count}}</h1>
+													<h6 class="text-uppercase">Your products</h6>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<div class="box-block tile tile-2 bg-primary mb-2 pd-3">
+												<div class="t-icon right"><i class="ti-package"></i></div>
+												<div class="t-content">
+													<h1 class="mb-1">10,000,00+</h1>
+													<h6 class="text-uppercase">Marketplace product</h6>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<div class="box-block tile tile-2 bg-success mb-2 pd-3">
+												<div class="t-icon right"><i class="ti-bar-chart"></i></div>
+												<div class="t-content">
+													<h1 class="mb-1">{{$inventory->instock}}</h1>
+													<h6 class="text-uppercase">Instock</h6>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<div class="box-block tile tile-2 bg-warning mb-2 pd-3">
+												<div class="t-icon right"><i class="ti-receipt"></i></div>
+												<div class="t-content">
+													<h1 class="mb-1">{{$inventory->count - $inventory->instock }}</h1>
+													<h6 class="text-uppercase">Outstock</h6>
+												</div>
+											</div>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 bg-white borrg">
+								<div class="box-block pdb-0">
+									<h5 class="mb-1">Sales Stats</h5>
+									<div class="legend">
+										<div style="position: absolute; width: 173px; height: 18px; top: 15px; right: 6px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div>
+										<table style="position:absolute;top:15px;right:6px;;font-size:smaller;color:#aaa">
+											<tbody>
+												<tr>
+													<td class="legendColorBox">
+														<div style="border:1px solid null;padding:1px">
+															<div style="width:4px;height:0;border:5px solid #43b968;overflow:hidden"></div>
+														</div>
+													</td>
+													<td class="legendLabel">Your Products&nbsp;&nbsp;</td>
+													<td class="legendColorBox">
+														<div style="border:1px solid null;padding:1px">
+															<div style="width:4px;height:0;border:5px solid #3e70c9;overflow:hidden"></div>
+														</div>
+													</td>
+													<td class="legendLabel">Marketplace Product&nbsp;&nbsp;</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div id="barCh" class="chart-container"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+@endsection
