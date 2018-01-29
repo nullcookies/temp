@@ -45,60 +45,17 @@
 		</div>
 		<!--<h1>Categories</h1>-->
 		<div class="owl-carousel category-slider owl-2 owl-theme">
+			<?php foreach($homepage_categories as $homepage_category): ?>
 			<div class="cat-box">
-				<a href="<?php echo e(url('category/love-letters')); ?>">
-					<img src="<?php echo e(asset('massengers/img/loveletters.jpg')); ?>" class="img-responsive"/>
+				<a href="<?php echo e($homepage_category->link); ?>">
+					<img src="<?php echo e(asset('/images/homepage_category/'.$homepage_category->image)); ?>" class="img-responsive"/>
 				</a>	
 				<ul>
-					<li class="catboxtitle">Love Letters</li>
-					<li class="pull-right"><a href="<?php echo e(url('category/love-letters')); ?>" class="catbuybtn" title="Buy Now">Buy Now <i class="fa fa-angle-right"></i></a></li>
+					<li class="catboxtitle"><?php echo e($homepage_category->title); ?></li>
+					<li class="pull-right"><a href="<?php echo e($homepage_category->link); ?>" class="catbuybtn" title="Buy Now"><?php echo e($homepage_category->link_title); ?><i class="fa fa-angle-right"></i></a></li>
 				</ul>
 			</div>
-			<div class="cat-box">
-				<a href="<?php echo e(url('/category/fan-mails')); ?>">
-					<img src="<?php echo e(asset('massengers/img/fan.jpg')); ?>" class="img-responsive"/>
-				</a>	
-				<ul>
-					<li class="catboxtitle">Fan Mails</li>
-					<li class="pull-right"><a href="<?php echo e(url('/category/fan-mails')); ?>" class="catbuybtn" title="Buy Now">Buy Now <i class="fa fa-angle-right"></i></a></li>
-				</ul>	
-			</div>
-			<div class="cat-box">
-				<a href="<?php echo e(url('/category/cakes')); ?>">
-					<img src="<?php echo e(asset('massengers/img/cakes.jpg')); ?>" class="img-responsive"/>
-				</a>	
-				<ul>
-					<li class="catboxtitle">Delicious Cake</li>
-					<li class="pull-right"><a href="<?php echo e(url('/category/cakes')); ?>" class="catbuybtn" title="Buy Now">Buy Now <i class="fa fa-angle-right"></i></a></li>
-				</ul>	
-			</div>
-			<div class="cat-box">
-				<a href="<?php echo e(url('category/all-flowers')); ?>">
-					<img src="<?php echo e(asset('massengers/img/flowers.jpg')); ?>" class="img-responsive"/>
-				</a>	
-				<ul>
-					<li class="catboxtitle">Flowers</li>
-					<li class="pull-right"><a href="<?php echo e(url('category/all-flowers')); ?>" class="catbuybtn" title="Buy Now">Buy Now <i class="fa fa-angle-right"></i></a></li>
-				</ul>	
-			</div>
-			<div class="cat-box">
-				<a href="<?php echo e(url('category/parker-pens')); ?>">
-					<img src="<?php echo e(asset('massengers/img/chocolate.jpg')); ?>" class="img-responsive"/>
-				</a>	
-				<ul>
-					<li class="catboxtitle">Chocolates</li>
-					<li class="pull-right"><a href="<?php echo e(url('category/chocholates')); ?>" class="catbuybtn" title="Buy Now">Buy Now <i class="fa fa-angle-right"></i></a></li>
-				</ul>	
-			</div>
-			<div class="cat-box">
-				<a href="<?php echo e(url('category/parker-pens')); ?>">
-					<img src="<?php echo e(asset('massengers/img/parkerpens.jpg')); ?>" class="img-responsive"/>
-				</a>	
-				<ul>
-					<li class="catboxtitle">Parker Pens</li>
-					<li class="pull-right"><a href="<?php echo e(url('category/parker-pens')); ?>" class="catbuybtn" title="Buy Now">Buy Now <i class="fa fa-angle-right"></i></a></li>
-				</ul>	
-			</div>
+			<?php endforeach; ?>
 		</div>	
 	</div>
 </div>
