@@ -159,6 +159,11 @@ Route::group(['namespace' => 'Massengers'], function(){
 
 
 Route::group(['prefix' => ADMIN_URL_PATH, 'namespace' => 'Admin', 'middleware' => 'isadmin'], function () {
+	/*admin*/
+	Route::get('/banners','Banner\BannerController@index');
+	Route::post('/savebanners','Banner\BannerController@saveBanner');
+	/*admin*/
+
 	Route::get('/','Homepage\DashboardController@index');
 	Route::get('/user_management','User\UserManagementController@index');
 	Route::delete('/user_management','User\UserManagementController@deleteUser');
