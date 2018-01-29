@@ -103,7 +103,7 @@ fixed-sidebar fixed-header skin-default content-appear
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-12">
-					<button type="submit" class="btn btn-purple">Create Album</button>
+					<button type="submit" class="btn btn-purple">Save</button>
 				</div>
 			</div>
 			{!! Form::close() !!}
