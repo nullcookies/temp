@@ -52,7 +52,7 @@
 				</a>	
 				<ul>
 					<li class="catboxtitle"><?php echo e($homepage_category->title); ?></li>
-					<li class="pull-right"><a href="<?php echo e($homepage_category->link); ?>" class="catbuybtn" title="Buy Now"><?php echo e($homepage_category->link_title); ?><i class="fa fa-angle-right"></i></a></li>
+					<li class="pull-right"><a href="<?php echo e($homepage_category->link); ?>" class="catbuybtn" title="Buy Now"><?php echo e($homepage_category->link_title); ?> <i class="fa fa-angle-right"></i></a></li>
 				</ul>
 			</div>
 			<?php endforeach; ?>
