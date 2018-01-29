@@ -85,7 +85,7 @@ fixed-sidebar fixed-header skin-default content-appear
 					<strong>{!! Session::get('success') !!}.</strong>
 				</div>
 				@endif
-			{!! Form::open(['files' => true, 'method' => 'post', 'action' => ['Admin\Banner\BannerController@saveBanner']]) !!}
+			{!! Form::open(['files' => true, 'method' => 'post', 'action' => ['Admin\HomepageCategory\HomepageCategoryController@store']]) !!}
 			<div class="form-group row">
 				<label for="subject" class="col-sm-2 col-form-label">Title</label>
 				<div class="col-sm-12">
@@ -170,18 +170,28 @@ fixed-sidebar fixed-header skin-default content-appear
 		  {!! Session::get('delete-danger') !!}
 		</div>
 		@endif
-			<form action="{{url('/admin/banners/delete')}}" method="POST">
+			<form action="{{url('/admin/homepage_category/delete')}}" method="POST">
 			{{csrf_field()}}
 			<table class="table" style="height: 10px;">
 				<thead>
 					<tr>
 						<th>#</th>
+						<th>Title</th>
 						<th>image</th>
 						<th>link</th>
+						<th>Link Title</th>
 					</tr>
 				</thead>
 				<tbody>
-					
+					@foreach($items as $item)
+						<tr>
+							<td><input type="checkbox" value="{{$item->id}}" name="id[]"></td>
+							<td>{{$item->title}}</td>
+							<td><img height="100" src="{{url('/images/homepage_category/'.$item->image)}}"></td>
+							<td><a href="{{$item->link}}">{{$item->link}}</a></td>
+							<td>{{$item->link_title}}</td>
+						</tr>
+					@endforeach
 				</tbody>
 				
 				<tfoot>

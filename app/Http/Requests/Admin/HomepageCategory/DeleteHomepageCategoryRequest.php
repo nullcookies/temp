@@ -4,7 +4,8 @@ namespace App\Http\Requests\Admin\HomepageCategory;
 
 use App\Http\Requests\Request;
 
-class AddHomepageCategoryRequest extends Request{
+class DeleteHomepageCategoryRequest extends Request
+{
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -19,12 +20,10 @@ class AddHomepageCategoryRequest extends Request{
      *
      * @return array
      */
-    public function rules(){
+    public function rules()
+    {
         return [
-            'title' => 'required',
-            'link' => 'required|url',
-            'link_title' => 'required',
-            'file' => 'required|image',
+            'id' => 'required',
         ];
     }
 }

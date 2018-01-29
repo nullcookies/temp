@@ -165,6 +165,7 @@ Route::group(['prefix' => ADMIN_URL_PATH, 'namespace' => 'Admin', 'middleware' =
 	Route::post('/banners/delete','Banner\BannerController@deleteBanner');
 
 	Route::resource('/homepage_category','HomepageCategory\HomepageCategoryController');
+	Route::post('/homepage_category/delete','HomepageCategory\HomepageCategoryController@delete');
 	/*admin*/
 
 	Route::get('/','Homepage\DashboardController@index');
