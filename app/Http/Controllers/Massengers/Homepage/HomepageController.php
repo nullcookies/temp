@@ -26,7 +26,7 @@ class HomepageController extends Controller{
     	$cards = $productHlper->getFilterCatArr(1,$allCategories);
 
         $data['homepage_categories'] = DB::table('homepage_categories')->where('active','yes')->get();
-        
+        $data['homepage_banners'] = DB::table('banner')->where('cid',2)->where('status',1)->get();
         // bday product section
         $categoryids = array_merge($all_flowers,$cakes,$chocholates,$cards);
     	$allProductIds          =   ProductCategory::whereIn('category_id',$categoryids)->select('product_id')->groupBy('product_id')->get();

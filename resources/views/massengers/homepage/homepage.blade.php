@@ -14,30 +14,11 @@
 	</div>
 </div>-->
 <div class="owl-carousel homepage-slider owl-theme">
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/karwachauth-banner.jpg')}}">
+	@foreach($homepage_banners as $homepage_banner)
+	<a href="{{$homepage_banner->link}}">
+		<img src="{{asset('/images/banners/'.$homepage_banner->image)}}">
 	</a>
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/banner_2.jpg')}}">
-	</a>
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/banner_3.jpg')}}">
-	</a>
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/banner_4.jpg')}}">
-	</a>
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/banner_5.jpg')}}">
-	</a>
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/banner_6.jpg')}}">
-	</a>
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/banner_7.jpg')}}">
-	</a>
-	<a href="javascript:;">
-		<img src="{{asset('massengers/Homepage-banners/banner_8.jpg')}}">
-	</a>
+	@endforeach
 </div>
 <h2 class="love-rym">Love has no Rym, No Reason !! No Time,  No Season !!</h2>
 <div class="container-fluid section4">
