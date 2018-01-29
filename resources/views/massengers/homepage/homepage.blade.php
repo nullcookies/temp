@@ -54,7 +54,7 @@
 				</a>	
 				<ul>
 					<li class="catboxtitle">{{$homepage_category->title}}</li>
-					<li class="pull-right"><a href="{{$homepage_category->link}}" class="catbuybtn" title="Buy Now">{{$homepage_category->link_title}}<i class="fa fa-angle-right"></i></a></li>
+					<li class="pull-right"><a href="{{$homepage_category->link}}" class="catbuybtn" title="Buy Now">{{$homepage_category->link_title}} <i class="fa fa-angle-right"></i></a></li>
 				</ul>
 			</div>
 			@endforeach
