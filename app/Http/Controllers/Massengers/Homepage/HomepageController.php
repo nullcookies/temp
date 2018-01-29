@@ -24,6 +24,8 @@ class HomepageController extends Controller{
     	$all_flowers = $productHlper->getFilterCatArr(1,$allCategories);
     	$chocholates = $productHlper->getFilterCatArr(1,$allCategories);
     	$cards = $productHlper->getFilterCatArr(1,$allCategories);
+
+        $data['homepage_categories'] = DB::table('homepage_categories')->where('active','yes')->get();
         
         // bday product section
         $categoryids = array_merge($all_flowers,$cakes,$chocholates,$cards);
