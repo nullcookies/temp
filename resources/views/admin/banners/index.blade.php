@@ -142,7 +142,20 @@ fixed-sidebar fixed-header skin-default content-appear
 			</div>
 		@endif
 		<div class="box-block bg-white">
-			<form>
+		@if(Session::has('delete-success'))
+		<div class="alert alert-success">
+		  {!! Session::get('delete-success') !!}
+		</div>
+		@endif
+
+		<div class="box-block bg-white">
+		@if(Session::has('delete-danger'))
+		<div class="alert alert-danger">
+		  {!! Session::get('delete-danger') !!}
+		</div>
+		@endif
+			<form action="{{url('/admin/banners/delete')}}" method="POST">
+			{{csrf_field()}}
 			<table class="table" style="height: 10px;">
 				<thead>
 					<tr>
@@ -152,7 +165,13 @@ fixed-sidebar fixed-header skin-default content-appear
 					</tr>
 				</thead>
 				<tbody>
-					
+					@foreach($banners as $banner)
+						<tr>
+							<td><input type="checkbox" value="{{$banner->id}}" name="bannerid[]"></td>
+							<td><img width="100" class="img-responsive" src="{!! url('images/banners/'.$banner->image) !!}"></td>
+							<td><a href="{{$banner->link}}">{!! $banner->link !!}</a></td>
+						</tr>
+					@endforeach
 				</tbody>
 				
 				<tfoot>

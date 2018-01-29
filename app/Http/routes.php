@@ -162,6 +162,7 @@ Route::group(['prefix' => ADMIN_URL_PATH, 'namespace' => 'Admin', 'middleware' =
 	/*admin*/
 	Route::get('/banners','Banner\BannerController@index');
 	Route::post('/savebanners','Banner\BannerController@saveBanner');
+	Route::post('/banners/delete','Banner\BannerController@deleteBanner');
 	/*admin*/
 
 	Route::get('/','Homepage\DashboardController@index');
