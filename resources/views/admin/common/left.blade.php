@@ -33,7 +33,7 @@
 						<li>
 							<a href="{{url('/admin/banners')}}" class="waves-effect  waves-light">
 								<span class="s-icon"><i class="fa fa-tachometer"></i></span>
-								<span class="s-text">Banners</span>
+								<span class="s-text">Homepage Banners</span>
 							</a>
 						</li>
  
