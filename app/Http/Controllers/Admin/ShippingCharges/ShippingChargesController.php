@@ -90,7 +90,7 @@ class ShippingChargesController extends Controller{
         ));
 
         if(!$insertZone){
-            continue;
+            //continue;
         }
 
         $weights                =   DB::table('delivery_weight')->get();

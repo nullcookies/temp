@@ -36,6 +36,13 @@
 								<span class="s-text">Homepage Banners</span>
 							</a>
 						</li>
+
+						<li>
+							<a href="{{url('/admin/homepage_category')}}" class="waves-effect  waves-light">
+								<span class="s-icon"><i class="fa fa-tachometer"></i></span>
+								<span class="s-text">Homepage Categories</span>
+							</a>
+						</li>
  
 					
 						<li class="menu-title">Orders</li>
