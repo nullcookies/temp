@@ -1,7 +1,7 @@
 /vendor
 /node_modules
 /public/storage
-/storage/
+/storage/*
 Homestead.yaml
 Homestead.json
 .env
@@ -16,3 +16,5 @@ public/product_images/*
 error_log
 /nbproject/private/
 /nbproject/
+/public/images/banners/
+storage/framework/views/
